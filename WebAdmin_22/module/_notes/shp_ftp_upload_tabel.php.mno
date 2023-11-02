@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rstShefile" value="name:INISIAL;datatype:string,name:KD_FILE;datatype:int,name:NAMA;datatype:string,name:KETERANGAN;datatype:string,name:DIR;datatype:string,name:FILE_NAME;datatype:string,name:TANGGAL;datatype:date,name:WAKTU;datatype:time" />
+</info>

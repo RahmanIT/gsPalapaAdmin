@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_RsPeta" value="name:KD_FEATURE;datatype:int,name:NM_FEATURE;datatype:string,name:KETERANGAN;datatype:string,name:TANGGAL;datatype:date,name:IMAGE;datatype:string" />
+</info>

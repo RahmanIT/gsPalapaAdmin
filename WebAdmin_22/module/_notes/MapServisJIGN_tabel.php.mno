@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_RstSrvs" value="name:KD_SRV;datatype:int,name:NM_SERVIS;datatype:string,name:URL_SERVIS;datatype:string,name:TYPE_SERVIS;datatype:string,name:NM_JDSN;datatype:string,name:TANGGAL;datatype:datetime" />
+</info>

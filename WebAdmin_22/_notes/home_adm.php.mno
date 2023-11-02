@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsSetting" value="name:KD_SET;datatype:int,name:SINGKATAN_ORG;datatype:string,name:NAMA_ORG;datatype:string,name:ALAMAT;datatype:string,name:KOTA;datatype:string,name:KODE_POS;datatype:string,name:TELPON;datatype:string,name:EMAIL;datatype:string,name:EMAIL_DOMAIN;datatype:string,name:DOMAIN;datatype:string,name:NAMA_PT;datatype:string,name:LOGO;datatype:string" />
+	<infoitem key="UD_rsKtg" value="name:KD_KATEGORI;datatype:int,name:NAMA;datatype:string" />
+	<infoitem key="UD_rstChat" value="name:tanggal;datatype:date,name:IP_HOST;datatype:int,name:HITS;datatype:real" />
+</info>

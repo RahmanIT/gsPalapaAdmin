@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Rs" value="name:Id;datatype:int,name:LABEL;datatype:string,name:URL;datatype:string,name:TITLE;datatype:string,name:VISIBLE;datatype:string,name:LYR_IDX;datatype:int,name:LOGIN_ST;datatype:string,name:TYPE;datatype:string" />
+</info>

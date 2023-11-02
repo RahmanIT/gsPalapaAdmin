@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Rs" value="name:KDMAP;datatype:int,name:KD_MODEL;datatype:int,name:NM_MAP;datatype:string,name:URL_MAP;datatype:string,name:LY_NAME;datatype:string,name:VISIBLE;datatype:string,name:TYPE;datatype:string,name:MAPIDX;datatype:int" />
+</info>

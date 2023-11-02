@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsSlideSh" value="name:ID_SLD;datatype:int,name:KETERANGAN;datatype:string,name:FOTO;datatype:string" />
+</info>

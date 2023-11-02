@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_RsAlert" value="name:Id;datatype:int,name:NF_ICON;datatype:string,name:KET;datatype:string,name:TANGGAL;datatype:datetime" />
+</info>

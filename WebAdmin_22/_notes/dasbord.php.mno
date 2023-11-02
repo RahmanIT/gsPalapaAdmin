@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsPendaftar" value="name:NAMA;datatype:string,name:TANGGAL;datatype:datetime" />
+	<infoitem key="UD_rstChat" value="name:tanggal;datatype:date,name:IP_HOST;datatype:int,name:HITS;datatype:real" />
+</info>

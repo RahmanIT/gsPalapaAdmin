@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_RsDownTrafic" value="name:NAMA_FILE;datatype:string,name:Id;datatype:int,name:NAMA;datatype:string,name:EMAIL;datatype:string,name:TANGGAL;datatype:datetime,name:IP_ADDR;datatype:string" />
+</info>

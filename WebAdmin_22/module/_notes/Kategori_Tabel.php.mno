@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsKategori" value="name:KD_KATEGORI;datatype:int,name:NAMA;datatype:string,name:KETERANGAN;datatype:string,name:KTG_ICON;datatype:string" />
+</info>

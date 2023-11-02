@@ -1,0 +1,175 @@
+.dojoxFloatingPane {
+	background-color:#282828;
+	color:#FFFFFF;
+	font-family:Tahoma, Geneva, sans-serif;
+	position: absolute;
+    z-index: 40; 
+	border: 1px solid #666; 
+	overflow: hidden;
+	border-radius:3px;
+	-webkit-box-shadow: 0px 5px 10px #adadad;
+}
+.dojoxFloatingPaneFg {
+	-webkit-box-shadow: 0px 8px 20px #525252;
+}
+.dojoxFloatingPaneTitle {
+	background: #cccccc;
+	background:#fafafa repeat-x bottom left;
+	border:1px solid #666;
+	padding:4px 4px 2px 4px;
+	cursor: pointer;
+	white-space: nowrap;
+}
+.dojoxFloatingPaneTitle {
+	background: -moz-linear-gradient(top,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+	color:#FF0;
+	padding:5px;
+	font-size: 0.9em;
+	font-weight: bold;
+	line-height:1.2em;
+}
+.tundra .dojoxFloatingPaneTitle {
+	background:#fafafa url("images/titleBarBg.gif") repeat-x bottom left;
+	border:1px solid #bfbfbf;
+	color:#000; 	
+}
+.dojoxFloatingCloseIcon {
+	background:url('images/tabClose.png') no-repeat center center; 
+	width:16px;
+	height:16px; 
+	overflow:hidden;
+	float:right; 
+}
+.dojoxFloatingMinimizeIcon {
+	background:url('images/spriteArrows.png') no-repeat 0px center; 
+	width:7px;
+	margin: 0px 4px;
+	overflow:hidden;
+	float:right; 
+}
+.dojoxFloatingMinimizeIcon {
+	background:url("images/spriteRoundedIconsSmallBl.png") no-repeat -15px top;
+	width: 14px;
+	margin: 0px 2px;
+}
+.floatingPaneMaximized .dojoxFloatingMaximizeIcon { display:none; }
+.dojoxFloatingMaximizeIcon {
+	background:url('images/spriteArrows.png') no-repeat -21px center;
+	width:7px;
+	margin: 0px 4px;
+	overflow:hidden;
+	float:right;	
+}
+.dojoxFloatingMaximizeIcon {
+	background:url("images/spriteRoundedIconsSmallBl.png") no-repeat -45px top;
+}
+.floatingPaneMaximized .dojoxFloatingRestoreIcon { display:inline; }
+.dojoxFloatingRestoreIcon {
+	background:url('images/spriteArrows.png') no-repeat 0px center; 
+	width:7px;
+	margin: 0px 4px;
+	float:right;
+	display:none;
+}
+.dojoxFloatingResizeHandle {
+	background:url('icons/resize.png') no-repeat bottom right;
+	position:absolute; 
+	right:0; 
+	bottom:0; 	
+	width:16px;
+	height:16px; 
+	cursor:nw-resize;
+}
+.dojoxFloatingCloseIcon {
+	width:15px;
+	height:15px; 
+	overflow:hidden;
+	float:right; 
+	cursor:pointer;
+}
+.dojoxFloatingCloseIcon {
+	background:url("images/spriteRoundedIconsSmallBl.png") no-repeat -60px top;
+}
+.tundra .dojoxFloatingCloseIcon {
+	background:url('images/tabClose.png') no-repeat center center; 	
+}
+.dojoxFloatingDockDefault {
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	overflow:hidden; 
+	margin:0;
+	margin-bottom:3px; 
+	padding:0px; 
+	width:100%;
+	z-index:99; 
+	background:transparent;
+	
+}
+.dojoxDockList {
+	padding: 0px;
+	margin: 0px;
+}
+.dojoxDockRestoreButton {
+	background:url('images/arrowUp.png') no-repeat center center;
+	width:16px; height:16px;
+	overflow:hidden; 
+	float:left;
+	margin-top:2px; 
+}
+.dojoxDockRestoreButton {
+	background:url("spriteRoundedIconsSmallBl.png") no-repeat -45px top;
+}
+.dojoxDockTitleNode {
+	overflow:hidden;
+}
+.dojoxDock {
+	display: block;
+	border: 1px solid black;
+	position: absolute;
+	padding:0;
+	margin:0;
+	background:#fcfcfc;
+}
+.dojoxDockNode {
+	border: 1px solid #adadad;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 3px;
+	cursor:pointer; 
+	list-style: none;
+	padding: 2px;
+	margin: 0px;
+	height: 16px;
+	width: auto;
+	float: left;
+	background: #fafafa url("titleBarBg.gif") repeat-x bottom left;
+}
+ .dojoxDockNode {
+	background:#b7cdee url("images/titleBar.png") repeat-x;
+}
+.dojoxFloatingPaneContent {
+	overflow: auto;
+	background-color:#282828;
+	height: 100%; 
+	width:	100%;
+}
+.dojoxFloatingPaneCanvas {
+	background-color:#282828;
+	margin:10px;
+	opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+	
+}
+.clodeFLoatPanel {
+	background:url('icons/close_button.png') no-repeat bottom right;
+	position:absolute; 
+	right:0; 
+	top:0; 	
+	width:24px;
+	height:24px; 
+	cursor:pointer
+}

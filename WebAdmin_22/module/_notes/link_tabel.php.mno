@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsLink" value="name:KD_LINK;datatype:int,name:NAMA;datatype:string,name:URL;datatype:string" />
+</info>

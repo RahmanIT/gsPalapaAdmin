@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsPembina" value="name:KD_JDSN;datatype:int,name:NM_JDSN;datatype:string,name:WEB_JIGN;datatype:string,name:SERVICE_URL;datatype:string,name:KETERANGAN;datatype:string,name:FOTO;datatype:string,name:TANGGAL;datatype:datetime" />
+</info>

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_RstPeta" value="name:ID;datatype:int,name:NM_SERVICE;datatype:string,name:TYPE_S;datatype:string,name:TANSPARAN;datatype:string,name:SLIDER;datatype:string,name:LEGEND;datatype:string,name:NO_IDX;datatype:string,name:START_OPT;datatype:string" />
+</info>

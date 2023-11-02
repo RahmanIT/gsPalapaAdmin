@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_RstFtLyr" value="name:KD_FT;datatype:int,name:NM_FEATURE;datatype:string,name:URL_FEATURE;datatype:string,name:AKSES;datatype:string,name:TANGGAL;datatype:datetime,name:KD_USER;datatype:int" />
+</info>

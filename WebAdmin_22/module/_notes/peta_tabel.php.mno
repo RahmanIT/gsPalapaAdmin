@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_RsPeta" value="name:KD_PETA;datatype:int,name:NAMA;datatype:string,name:TYPE_IG;datatype:string,name:TGL_MODIF;datatype:date,name:IMAGE;datatype:string" />
+</info>

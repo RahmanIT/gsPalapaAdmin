@@ -1,0 +1,23 @@
+<?php error_reporting(0);  if($P[0]["ROLE"]>=2 && $P[0]["ROLE"]<=3 && $P[0]["EMAIL"]!=""){ ?>
+	<?php 
+	$kdDel = $_GET["p"];
+	$Foto = mysqli_result(mysqli_query($Congis, "SELECT FOTO FROM tb_berita WHERE KD_NEWS=$kdDel"), 0); 
+	unlink($conf["DataDir"]."images/berita/65x65_".$Foto);
+	unlink($conf["DataDir"]."images/berita/300x250_".$Foto);
+	unlink($conf["DataDir"]."images/berita/800x450_".$Foto);
+	$query = sprintf("DELETE from tb_berita WHERE KD_NEWS=%s",GetSQLValueString($Congis,$kdDel, "int"));
+	$hsl = mysqli_query($Congis, $query) or die(mysqli_error());
+	if(isset($hsl)){
+	echo "0";
+	$tglNf = date("Y-m-d H:i:s");
+	$wkt = time();
+	$nmA = $P[0]["INISIAL"];
+	$Query = sprintf("INSERT INTO tb_alert(KDNF, MSG_INFO, TANGGAL, WAKTU, USER_NAME) VALUES (%s,%s,%s,%s,%s)",
+		GetSQLValueString($Congis,4, "int"),
+		GetSQLValueString($Congis,"Menghapus berita index $kdDel and files $Foto", "text"),
+		GetSQLValueString($Congis,$tglNf, "date"),
+		GetSQLValueString($Congis,$wkt, "text"),
+		GetSQLValueString($Congis,$nmA, "text"));
+		mysqli_query($Congis, $Query);
+	} ?>
+<?php } ?>
