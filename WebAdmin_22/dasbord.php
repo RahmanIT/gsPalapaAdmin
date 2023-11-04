@@ -25,8 +25,7 @@
                                         <i class="fa fa-users fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">
-                                       <?php mysqli_select_db($Congis, $database_Confdbms); ?>
+                                        <div class="huge">                                       
                                         <?php $User1  = mysqli_result(mysqli_query($Congis, "SELECT COUNT(ip) FROM tstatistika"), 0); echo $User1; // ?>
                                        
                                         </div>

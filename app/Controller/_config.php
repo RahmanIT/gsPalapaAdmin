@@ -1,5 +1,5 @@
 <?php 
-$conf["Folder"] = "/gsPalapaAdmin";
+$conf["Folder"] = "/gsPalapa";
 $conf["DataDir"] = "D:/06 PROJECT/GeoportalData/";
 $conf["TempDir"] = "C:/xampp/tmp/";
 $conf["SrvAPI"] = "http://localhost/GeoServis";
