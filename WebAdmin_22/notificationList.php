@@ -1,19 +1,19 @@
-<?php error_reporting(0);  if($P[0]["ROLE"]>=2 && $P[0]["ROLE"]<=3 && $P[0]["EMAIL"]!=""){
+<?php error_reporting(0);  
+if($P[0]["ROLE"]>=2 && $P[0]["ROLE"]<=3 && $P[0]["EMAIL"]!=""){
 $maxRows_RsNotification = 20;
 $Halaman = 0;
 if (isset($_GET['Halaman'])) {
   $Halaman = $_GET['Halaman'];
 }
 $startRow_RsNotification = $Halaman * $maxRows_RsNotification;
-mysqli_select_db($Confdbms, $database_Confdbms);
 $query_RsNotification = "SELECT tb_alert.Id,  tb_alert.MSG_INFO, tb_notifications.NF_ICON,  tb_alert.TANGGAL,  tb_alert.WAKTU,  tb_alert.USER_NAME FROM  tb_alert   INNER JOIN tb_notifications ON tb_alert.KDNF = tb_notifications.KDNF ORDER BY tb_alert.Id DESC ";
 $query_limit_RsNotification = sprintf("%s LIMIT %d, %d", $query_RsNotification, $startRow_RsNotification, $maxRows_RsNotification);
-$RsNotification = mysqli_query($Confdbms, $query_limit_RsNotification) or die(mysqli_error());
+$RsNotification = mysqli_query($Congis, $query_limit_RsNotification) or die(mysqli_error());
 $row_RsNotification = mysqli_fetch_assoc($RsNotification);
 if (isset($_GET['totalRows_RsNotification'])) {
   $totalRows_RsNotification = $_GET['totalRows_RsNotification'];
 } else {
-  $all_RsNotification = mysqli_query($Confdbms, $query_RsNotification);
+  $all_RsNotification = mysqli_query($Congis, $query_RsNotification);
   $totalRows_RsNotification = mysqli_num_rows($all_RsNotification);
 }
 $Total = ceil($totalRows_RsNotification/$maxRows_RsNotification)-1;

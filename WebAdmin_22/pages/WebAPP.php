@@ -146,10 +146,10 @@ function CekFungsiM(){
                         </h1>
                         <ol class="breadcrumb">
 							<li>
-                                <i class="fa fa-dashboard"></i>  <a href="../../WebAdmin/pages/home">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="<?php echo $nama_folder; ?>/WebAdmin/">Dashboard</a>
                             </li>
                             <li>
-                                <i class="fa fa-globe"></i><a href="../../WebAdmin/pages/jdsn.jps">WEB-APP</a>
+                                <i class="fa fa-globe"></i><a href="<?php echo $nama_folder; ?>/WebAdmin/WebApp.jsp">WEB-APP</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-pencil"></i> Daftar APP

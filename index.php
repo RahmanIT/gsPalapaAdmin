@@ -2,7 +2,7 @@
 if (!isset($_SESSION)) {
   session_start();
 }
-error_reporting(0);
+//error_reporting(0);
 date_default_timezone_set('Asia/Makassar');
 $url = explode("/",$_SERVER["REQUEST_URI"]);
 $segmen1   = $url[1];
@@ -16,12 +16,9 @@ $nama_folder = $conf["Folder"];
 if(isset($_SESSION['P'])){
 	$P = json_decode($_SESSION['P'], true);
 }
-$_SESSION["folder"] = $nama_folder;
 require_once('Connections/Congis.php');
 
 switch ($segmen2) {
-
-
 case "files" : 
 	 include('WebAdmin_22/library/file_render_FOTO.php'); 
 	break;
@@ -43,8 +40,6 @@ case "Upload-pdf-update" :
 	 include('library/Download_update.php'); 
 	break;	
 
-
-	
 //================== GS-PALAPA ADMIN ==================
 case "Upload-images-berita" : 
 	 include('WebAdmin_22/module/UploadFhoto.php'); 
@@ -483,6 +478,29 @@ case "BackupDB.jps" :
 case "BackupSQLList.jsp" : 
 	 include('WebAdmin_22/module/BackupDbSQL_list.php'); 
 	break;
+
+case "rest-auth" : 
+	 include('WebAdmin_22/module/login_RestApi.php'); 
+	break;
+
+//----------------------------------------------------
+case "GetDataAppID.jsp" : 
+	 include('WebAdmin_22/module/WebAppGPS_Cbodata.php'); 
+	break;
+
+case "BuatTabelGPS.jsp" : 
+	 include('WebAdmin_22/module/WebAppGPS_CreateTabelpg.php'); 
+	break;
+
+case "ApplayCOnfigTabelGPS.jsp" : 
+	 include('WebAdmin_22/module/WebAppGPS_appy.php'); 
+	break;
+
+case "PushDataWypointGPS" : 
+	 include('WebAdmin_22/module/WebAppGPS_posting.php'); 
+	break;
+
+//----------------------------------------------------
 	
 default;
       include('404.html');

@@ -171,5 +171,7 @@ width:400px;
                </form>
 <script>
 document.getElementById("fature01").className = "active";
+	document.getElementById("data02").className = "active";
+	document.getElementById("Data2").className = "collapse in"
 </script>
 <?php } ?>

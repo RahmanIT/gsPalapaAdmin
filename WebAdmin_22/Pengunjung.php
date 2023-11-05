@@ -5,15 +5,14 @@ if (isset($_GET['Halaman'])) {
   $Halaman = $_GET['Halaman'];
 }
 $startRow_rsPengunjung = $Halaman * $maxRows_rsPengunjung;
-mysqli_select_db($Confdbms, $database_Confdbms);
 $query_rsPengunjung = "SELECT * FROM tstatistika ORDER BY Id DESC";
 $query_limit_rsPengunjung = sprintf("%s LIMIT %d, %d", $query_rsPengunjung, $startRow_rsPengunjung, $maxRows_rsPengunjung);
-$rsPengunjung = mysqli_query($Confdbms, $query_limit_rsPengunjung) or die(mysqli_error());
+$rsPengunjung = mysqli_query($Congis, $query_limit_rsPengunjung) or die(mysqli_error());
 $row_rsPengunjung = mysqli_fetch_assoc($rsPengunjung);
 if (isset($_GET['Total'])) {
   $Total = $_GET['Total'];
 } else {
-  $all_rsPengunjung = mysqli_query($Confdbms, $query_rsPengunjung);
+  $all_rsPengunjung = mysqli_query($Congis, $query_rsPengunjung);
   $Total = mysqli_num_rows($all_rsPengunjung);
 }
 $totalPages_rsPengunjung = ceil($Total/$maxRows_rsPengunjung)-1;

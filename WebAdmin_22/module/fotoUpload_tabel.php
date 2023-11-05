@@ -32,7 +32,7 @@ $totalPages_RstFhotosExp = ceil($totalRows_RstFhotosExp/$maxRows_RstFhotosExp)-1
                               <a href="<?php echo $nama_folder."/files/".$row_RstFhotosExp['FOTO']; ?>" target="_blank">
                               <button type="button" class="btn btn-sm btn-success">Lihat</button>
                               </a>
-                            <button type="button" onClick="UrlFoto('<?php echo $nama_folder."/files/".$row_RstFhotosExp['FOTO']; ?>')" class="btn btn-sm btn-warning">URL</button>
+                            <button type="button" onClick="UrlFoto('<?php echo "/WebPortal/files/".$row_RstFhotosExp['FOTO']; ?>')" class="btn btn-sm btn-warning">URL</button>
                            <button type="button" onClick="Hapus('<?php echo $row_RstFhotosExp['FOTO']; ?>','FotoExp',<?php echo $row_RstFhotosExp['KD']; ?>)" class="btn btn-sm btn-danger">Hapus</button>
    						</div>
                       </div>

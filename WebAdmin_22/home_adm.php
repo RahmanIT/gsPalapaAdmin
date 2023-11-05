@@ -157,22 +157,22 @@ function EditDataSandi(){
 					?>
                     <ul class="dropdown-menu message-dropdown">
                         <li>
-                            <a href="https://geoservice.kalselprov.go.id/ReLogin/index?key=<?php echo $keyL; ?>" target="_blank"><i class="fa fa-fw fa-globe"></i>Geo Servis</a>
+                            <a href="<?php echo $conf["GeoServisDomain"]; ?>/ReLogin/index?key=<?php echo $keyL; ?>" target="_blank"><i class="fa fa-fw fa-globe"></i>Geo Servis</a>
                         </li>
                         <li>
-                            <a href="<?php echo $nama_folder; ?>/GeoVista/" target="_blank"><i class="fa fa-fw fa-globe"></i>Geovista</a>
+                            <a href="/WebPortal/GeoVista/" target="_blank"><i class="fa fa-fw fa-globe"></i>Geovista</a>
                         </li>
-                        <li>
+<?php /*?>                        <li>
                             <a href="http://sip.kalsel-sdi.web.id/Trasmisi/login?key=<?php echo $keyL; ?>" target="_blank"><i class="fa fa-fw fa-globe"></i>Spasial Anlisis</a>
-                        </li>
+                        </li><?php */?>
                         <li>
-                            <a href="http://geoservice.kalselprov.go.id/geoserver/web" target="_blank"><i class="fa fa-fw fa-tasks"></i>Geoserver A</a>
+                            <a href="<?php echo $conf["Geoserver"]; ?>/web" target="_blank"><i class="fa fa-fw fa-tasks"></i>Geoserver A</a>
                         </li>
                         <li>
                             <a href="https://geoportal.kalselprov.go.id/arcgis/rest/services/Kalsel" target="_blank"><i class="fa fa-fw fa-tasks"></i>Arcgis Server</a>
                         </li>
                         <li>
-                            <a href="<?php echo $nama_folder; ?>" target="_blank"><i class="fa fa-fw fa-th-large"></i>WebPortal</a>
+                            <a href="/WebPortal/" target="_blank"><i class="fa fa-fw fa-th-large"></i>WebPortal</a>
                         </li>
                     </ul>
                 </li>
@@ -247,8 +247,9 @@ function EditDataSandi(){
                  <li id="AppGIs01" class="">
                     <a href="javascript:;" data-toggle="collapse" data-target="#AppGIs"><i class="fa fa-fw fa-database"></i>Web APP<i class="fa fa-fw fa-caret-down"></i></a>
                          <ul id="AppGIs" class="collapse">
-                            <li><a  href="<?php echo $nama_folder."/WebAdmin/"; ?>WebApp.jsp"><i class="fa fa-fw fa-map-marker"></i>GIS APP</a></li> 
-                            <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>WebAppData.jsp"><i class="fa fa-fw fa-wrench"></i>GIS APP DATA</a></li> 
+                            <li><a  href="<?php echo $nama_folder."/WebAdmin/"; ?>WebApp.jsp"><i class="fa fa-fw fa-map-marker"></i>GIS App</a></li> 
+                            <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>WebAppData.jsp"><i class="fa fa-fw fa-wrench"></i>GIS App Layers</a></li> 
+                            <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>GeoTagging.jsp"><i class="fa fa-fw fa-wrench"></i>GeoTagging</a></li> 
                         </ul>
                    </li>
                    <li id="config02">
@@ -444,6 +445,10 @@ function EditDataSandi(){
 					break;
 			case "Backupdb.jsp" : 
 	 		    	include('pages/Backup_database.php'); 
+					break;
+			
+			case "GeoTagging.jsp" : 
+	 		    	include('pages/WebApp_Geotagging.php'); 
 					break;
 																 
 			default;

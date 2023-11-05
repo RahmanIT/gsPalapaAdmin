@@ -51,7 +51,7 @@
 							  <td><?php echo $row_rsAgenda['TANGGAL']; ?></td>
 							  <td><?php echo $row_rsAgenda['TEMPAT']; ?></td>
 							  <td>  
-							  <a href="<?php echo $nama_folder."/Agenda/index.html" ?>" target="_blank">   
+							  <a href="<?php echo "/WebPortal/Agenda/index.html" ?>" target="_blank">   
 							  <button type="button" class="btn btn-xs btn-success">Lihat</button> 
 							  </a>
 							  <a href="<?php echo $nama_folder."/WebAdmin/EditAgenda/".$row_rsAgenda['KD']; ?>">

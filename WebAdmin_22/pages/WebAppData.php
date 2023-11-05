@@ -5,7 +5,7 @@ if($P[0]["ROLE"]==3){
  if($P[0]["ROLE"]==2){
    $quetFt= "";
 }
-$query_RsApp = "SELECT KD_MODEL, NM_MODEL FROM tb_modelling $quetFt ORDER BY KD_MODEL DESC";
+$query_RsApp = "SELECT KD_MODEL, NM_MODEL FROM tb_modelling  $quetFt ORDER BY KD_MODEL DESC";
 $RsApp = mysqli_query($Congis, $query_RsApp) or die(mysqli_error());
 $row_RsApp = mysqli_fetch_assoc($RsApp);
 $totalRows_RsApp = mysqli_num_rows($RsApp);

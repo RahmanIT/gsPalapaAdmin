@@ -56,7 +56,7 @@
 		  <td align="center"><?php echo $row_rsPengumuman['CREATED']; ?></td>
 		  <td align="center"><?php echo $row_rsPengumuman['TANGGAL']; ?></td>
 		  <td>
-			 <a href="<?php echo $nama_folder."/informasi/index.html" ?>" target="_blank">
+			 <a href="<?php echo "/WebPortal/informasi/index.html" ?>" target="_blank">
 				<button type="button" class="btn btn-xs btn-success">Lihat</button>
 			 </a>
 			 <a href="<?php echo $nama_folder."/WebAdmin/EditPengumuman/".$row_rsPengumuman['KD']; ?>"> 

@@ -66,7 +66,7 @@
 		  <td align="center"><?php echo $row_RsBerita['TANGGAL']; ?></td>
 		  <td align="center" valign="middle">
 		  <?php $isi= $row_RsBerita["JUDUL"]; $str = str_replace(' ', '-', $isi);?>
-		  <a href="<?php echo $nama_folder."/page/view/".$str.".html"; ?>" target="_blank">
+		  <a href="<?php echo "/WebPortal/page/view/".$str.".html"; ?>" target="_blank">
 		  <button type="button" class="btn btn-xs btn-success">Lihat</button>
 		  </a>
 		  <a href="<?php echo $nama_folder; ?>/WebAdmin/EditBerita/<?php echo $row_RsBerita['KD_NEWS']; ?>" >
@@ -80,5 +80,5 @@
 		  </table>
 		  
 	<?php
-	mysqli_free_result($RsBerita);
+	//mysqli_free_result($RsBerita);
  } ?>

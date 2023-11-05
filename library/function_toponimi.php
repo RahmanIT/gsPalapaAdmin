@@ -9,19 +9,21 @@
  * Image resize
  * @param int $width
  * @param int $height
- */
-function resize($width, $height, $DataDir){
+// */
+
+function resize($width, $height, $DataDir, $namaFoto, $type,$wabapp){
 	/* Get original image x y*/
-	list($w, $h) = getimagesize($_FILES['FileFotoMap']['tmp_name']);
+	$FotoFilesServer =  'C:/xampp/tmp/'.$namaFoto;
+	list($w, $h) = getimagesize($FotoFilesServer);
 	/* calculate new image size with ratio */
 	$ratio = max($width/$w, $height/$h);
 	$h = ceil($height / $ratio);
 	$x = ($w - $width / $ratio) / 2;
 	$w = ceil($width / $ratio);
 	/* new file name */
-	$path = $DataDir.'images/toponimi/'.$width.'x'.$height.'_'.$_FILES['FileFotoMap']['name'];
+	$path =  $DataDir.'images/toponimi/'.$wabapp.'_'.$width.'x'.$height.'_'.$namaFoto;
 	/* read binary data from image file */
-	$imgString = file_get_contents($_FILES['FileFotoMap']['tmp_name']);
+	$imgString = file_get_contents($FotoFilesServer);
 	/* create image from string */
 	$image = imagecreatefromstring($imgString);
 	$tmp = imagecreatetruecolor($width, $height);
@@ -31,7 +33,7 @@ function resize($width, $height, $DataDir){
   	$width, $height,
   	$w, $h);
 	/* Save image */
-	switch ($_FILES['FileFotoMap']['type']) {
+	switch ($type) {
 		case 'image/jpeg':
 			imagejpeg($tmp, $path, 100);
 			break;
@@ -52,6 +54,5 @@ function resize($width, $height, $DataDir){
 	/* cleanup memory */
 	imagedestroy($image);
 	imagedestroy($tmp);
-}
-
-?>
+	unlink($FotoFilesServer);
+}; ?>

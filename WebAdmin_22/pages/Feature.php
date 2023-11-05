@@ -18,7 +18,7 @@ function HalamanBerikutnya(){
 	var hl = document.getElementById("Halaman").value; 
 	document.getElementById("Halaman").value = eval(hl)+1;
 	TampilkanTabel()
-}
+};
 
 function HalamanSebelumnya(){
 	var hl 	=document.getElementById("Halaman").value; 
@@ -26,9 +26,7 @@ function HalamanSebelumnya(){
 		document.getElementById("Halaman").value  = eval(hl)-1;
 		TampilkanTabel()
 	}
-}
-	document.getElementById("data02").className = "active";
-	document.getElementById("Data2").className = "collapse in";
+};
 </script>
 <div class="container-fluid">
                 <!-- Page Heading -->
@@ -71,7 +69,7 @@ function HalamanSebelumnya(){
 
 <script>
 	TampilkanTabel();
-	document.getElementById("Data2").className = "active";
-	document.getElementById("Data2").className = "collapse in";
+	document.getElementById("data02").className = "active";
+	document.getElementById("Data2").className = "collapse in"
 </script>   
 <?php } ?>     
