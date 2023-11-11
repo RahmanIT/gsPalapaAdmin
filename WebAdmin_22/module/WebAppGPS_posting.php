@@ -43,7 +43,7 @@ echo $Query;
 $ps = pg_query($pgdb, $Query)or die('<div class="alert alert-danger" role="alert">'.pg_last_error().'</div>');
 
 $TabelNMMd = $TabelNM.'_METADATA'; 
-$QueryMeta = sprintf("INSERT INTO  \"WYPOINT\".\"$TabelNMMd\" (latitude, longitude, ipaddr, tgljam, waktu, namafile, metadata, wadmkd, wadmkc,wadmkk, akurasi, ketinggian, akurasielv, arah, kecepatan)  VALUES ( %s, %s, '%s', '%s', %s, '%s','%s', '%s', '%s', '%s', %s, %s, %s, %s, %s)", $y, $x, $ip,$tglP, $waktu, $foto, $metadata, $Desa, $Kec, $Kab, $a, $b, $c, $d, $e);
+$QueryMeta = sprintf("INSERT INTO  \"WYPOINT\".\"$TabelNMMd\" (latitude, longitude, sesi_name, ipaddr, tgljam, waktu, namafile, metadata, wadmkd, wadmkc,wadmkk, akurasi, ketinggian, akurasielv, arah, kecepatan)  VALUES ( %s, %s, '%s', '%s', '%s', %s, '%s','%s', '%s', '%s', '%s', %s, %s, %s, %s, %s)", $y, $x, $wabapp,$ip,$tglP, $waktu, $foto, $metadata, $Desa, $Kec, $Kab, $a, $b, $c, $d, $e);
 
 echo '<br>'.$QueryMeta;
 pg_query($pgdb, $QueryMeta)or die('<div class="alert alert-warning" role="alert">'.pg_last_error().'</div>');

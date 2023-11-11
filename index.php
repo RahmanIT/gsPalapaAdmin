@@ -2,7 +2,7 @@
 if (!isset($_SESSION)) {
   session_start();
 }
-//error_reporting(0);
+error_reporting(0);
 date_default_timezone_set('Asia/Makassar');
 $url = explode("/",$_SERVER["REQUEST_URI"]);
 $segmen1   = $url[1];
@@ -40,6 +40,9 @@ case "Upload-pdf-update" :
 	 include('library/Download_update.php'); 
 	break;	
 
+case "CSW-geoservice" : 
+	 include('library/CSW_API_DataTabel.php'); 
+	break;
 //================== GS-PALAPA ADMIN ==================
 case "Upload-images-berita" : 
 	 include('WebAdmin_22/module/UploadFhoto.php'); 
@@ -114,11 +117,11 @@ case "TransmiterSHPunZip.jsp" :
 case "EditSHPaksesOP.jsp" : 
 	 include('WebAdmin_22/module/shp_ftp_UpdateAkses.php'); 
 	break;		
-//-------------------- MAP SERVIS JIGN ----------------
+//---------------- MAP SERVIS JIGN ----------------
 case "TabelMapServisJIGN.jsp" : 
 	 include('WebAdmin_22/module/MapServisJIGN_tabel.php'); 
 	break;	
-//----------------------------------------------------
+//-------------------------------------
 case "berita.jsp" : 
 	 include('WebAdmin_22/module/berita_post.php'); 
 	break;
@@ -131,7 +134,7 @@ case "Update-Berita.jsp" :
 case "Hapus-Berita.jsp" : 
 	 include('WebAdmin_22/module/Berita_delete.php'); 
 	break;
-//----------------------------------------------------
+//-------------------------------------
 case "TabelPeta.jsp" : 
 	 include('WebAdmin_22/module/peta_tabel.php'); 
 	break;
@@ -305,7 +308,7 @@ case "UserDownload.jsp" :
 case "Kirim-Pesan.jsp" : 
 	 include('WebAdmin_22/module/Koment_post.php'); 
 	break;		
-//----------------------------------------------------	
+//---------------------------------
 case "Tabel-FhotoExplor.jsp" : 
 	 include('WebAdmin_22/module/fotoUpload_tabel.php'); 
 	break;	
@@ -319,14 +322,14 @@ case "DownloadTrafic.jsp" :
 case "DownloadPetaTrafic.jsp" : 
 	 include('WebAdmin_22/module/UserDownloadPetaRecord_tabel.php'); 
 	break;
-//----------------------------------------------------
+//----------------------------------
 case "Metadata-Load.jsp" : 
 	 include('WebAdmin_22/module/Metadata_read.php'); 
 	break;
 case "Metadata-Old.jsp" : 
 	 include('WebAdmin_22/module/Metadata_read_editting.php'); 
 	break;	
-//----------------------------------------------------
+//-------------------------------------
 case "FromFeatureLoad.jsp" : 
 	 include('WebAdmin_22/module/feature_FormPeta.php'); 
 	break;
@@ -366,15 +369,14 @@ case "DynamicTile-add.jsp" :
 case "DynamicTile-hapus.jsp" : 
 	 include('WebAdmin_22/module/feature_dynamic_delete.php'); 
 	break;
-//----------------------------------------------------
-
+//--------------------------------------
 case "TabelDownloadFile.jsp" : 
 	 include('WebAdmin_22/module/Download_file_tabel.php'); 
 	break;
 case "Hapus-FileDownload.jsp" : 
 	 include('WebAdmin_22/module/Download_file_delete.php'); 
 	break;
-//----------------------------------------------------
+//---------------------------------------
 case "Veri" : 
 	 include('WebAdmin_22/module/user_download_verifikasi.php'); 
 	break;
@@ -385,7 +387,7 @@ case "Kirim" :
 	 include('WebAdmin_22/module/user_download_kirim.php'); 
 	break;	
 
-//----------------------------------------------------
+//-------------------------------------
 case "SimpanMapService.jsp" : 
 	 include('WebAdmin_22/module/MapService_post.php'); 
 	break;
@@ -398,12 +400,11 @@ case "Tabel-MapService.jsp" :
 case "Hapus-MapService.jsp" : 
 	 include('WebAdmin_22/module/MapService_delete.php'); 
 	break;	
-	
-//----- Menu Geoserver ---------------------------------------
+//----- Menu Geoserver --------------------
 case "ServerMapServiceData.jsp" : 
 	 include('WebAdmin_22/pages/ServerMapServiceData.php'); 
 	break;
-//------------Web APP----------------------------------------
+//------------Web APP------------------------
 case "WebApp.jsp" : 
 	 include('WebAdmin_22/module/WebApp_post.php'); 
 	break;
@@ -416,7 +417,7 @@ case "Edit-WebApp.jsp" :
 case "Hapus-WebApp.jsp" : 
 	 include('WebAdmin_22/module/WebApp_delete.php'); 
 	break;
-//------------Web APP DATA----------------------------------------
+//------------Web APP DATA------------------
 case "WebAppData.jsp" : 
 	 include('WebAdmin_22/module/WebAppData_post.php'); 
 	break;
@@ -429,7 +430,7 @@ case "Edit-WebAppData.jsp" :
 case "Hapus-WebAppData.jsp" : 
 	 include('WebAdmin_22/module/WebAppData_delete.php'); 
 	break;
-//------------BASEMAP LAYER----------------------------------------
+//------------BASEMAP LAYER------------------
 case "Basemap.jsp" : 
 	 include('WebAdmin_22/module/Basemap_post.php'); 
 	break;
@@ -442,7 +443,7 @@ case "Edit-Basemap.jsp" :
 case "Hapus-Basemap.jsp" : 
 	 include('WebAdmin_22/module/Basemap_delete.php'); 
 	break;
-//------------LAYER MAP GIS-----------------------
+//------------LAYER MAP GIS--------------------
 case "Layer.jsp" : 
 	 include('WebAdmin_22/module/Layer_post.php'); 
 	break;
@@ -455,8 +456,7 @@ case "Edit-Layer.jsp" :
 case "Hapus-Layer.jsp" : 
 	 include('WebAdmin_22/module/Layer_delete.php'); 
 	break;
-	
-//----------------------------------------------------
+//------------------------------------
 case "PetaKatalog.jsp" : 
 	 include('WebAdmin_22/module/KatalogPetaGalery.php'); 
 	break;
@@ -483,7 +483,7 @@ case "rest-auth" :
 	 include('WebAdmin_22/module/login_RestApi.php'); 
 	break;
 
-//----------------------------------------------------
+//-------------------------------------
 case "GetDataAppID.jsp" : 
 	 include('WebAdmin_22/module/WebAppGPS_Cbodata.php'); 
 	break;
@@ -500,8 +500,18 @@ case "PushDataWypointGPS" :
 	 include('WebAdmin_22/module/WebAppGPS_posting.php'); 
 	break;
 
-//----------------------------------------------------
-	
+case "DataWypoint-List" : 
+	 include('WebAdmin_22/module/WebAppGPS_list.php'); 
+	break;
+
+case "DataWypoint-Detil" : 
+	 include('WebAdmin_22/module/WebAppGPS_dataFoto.php'); 
+	break;
+
+case "DataWypoint-Verfikasi" : 
+	 include('WebAdmin_22/module/WebAppGP_verfikasi.php'); 
+	break;
+//--------------------------
 default;
       include('404.html');
 }

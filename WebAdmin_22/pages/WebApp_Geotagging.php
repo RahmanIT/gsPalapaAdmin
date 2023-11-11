@@ -38,6 +38,7 @@
                 <div class="panel-heading">
                      <h3 id="HederJudul">Manajeman GPS</h3>
                     <div id="infoSave"></div>
+                     
                 </div>
                     <div class="panel-body">                              
                       <form method="post" name="form1" id="form1" enctype="multipart/form-data" action="<?php echo $nama_folder; ?>/ApplayCOnfigTabelGPS.jsp"> 
@@ -90,14 +91,45 @@
                 <div class="panel-heading">
                     <h3 onClick="TampilkanTabel()" style="cursor:pointer;">Daftar Data Geotagging</h3>
                 </div>
-                <div class="panel-body">                              
-                   <div id="linkList1"></div> 
-                </div>
+                <div align="right">
+                			<select name="CboDataMax" id="CboDataMax" onchange="LoadDataFoto()" style="font-size:14px; margin:5px; padding:4px;">
+                			  <option value="10">10</option>
+                			  <option value="25">25</option>
+                			  <option value="50">50</option>
+                			  <option value="100">100</option>
+                			</select>
+                           <input id="CmdBackPage"  type="button" value="&lt;&lt;" />
+                          <input name="Halaman" type="text" id="Halaman" value="1" size="2" maxlength="3" style="text-align:center;" />
+                          <input id="CmdNexPage" type="button" value="&gt;&gt;" />
+              </div>
+                    <div class="panel-body">
+                         <div id='loding2' style='display:none'><img src="<?php echo $nama_folder; ?>/images/loader.gif" alt="Uploading...."/></div>
+                        <div id="linkList1"></div> 
+                    </div>
           </div>
    </div>
 <!-- ========================================================================================== -->                   
 </div>
   <!-- /#page-wrapper -->
+<div class="modal fade" id="MetadataleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-success">
+        <h5 class="modal-title" id="exampleModalLabel">Metadata</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="InfoMetadataFoto">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+         <button type="button" id="CmdVerfikasi" class="btn btn-success">Verifikasi</button>
+      </div>
+    </div>
+  </div>
+</div>
 <p>&nbsp;</p>
 <script src="<?php echo $nama_folder; ?>/Libs/js/jquery.wallform.js"></script>
 <script>
@@ -114,9 +146,12 @@ function GetDataApp(){
 		if(msg["NM_TABEL"] == null){
 		   document.getElementById("CdmBuatTabel").style.display = 'inline';
 		   $('#NAMA_TB').val(msg["PAGE_NAME"]+'_GPS_PT_25K');
+		   $('#linkList1').html('');
 		}else{
 			$('#NAMA_TB').val(msg["NM_TABEL"]);
 		   document.getElementById("CdmBuatTabel").style.display = 'none';
+		   document.getElementById("Halaman").value = 1;
+		   LoadDataFoto();
 		}
 		if(msg["GPS_MODE"] == 'on'){
 			document.getElementById('customSwitch1').checked = true;
@@ -143,6 +178,63 @@ document.getElementById("CdmBuatTabel").onclick = function(){
 		}
 	});
 };
+
+
+function LoadDataFoto(){
+	$("#loding2").show();
+	var a = document.getElementById("Halaman").value;
+	var b = document.getElementById("NAMA_TB").value;
+	var c = document.getElementById("CboDataMax").value;
+	$.ajax({
+	url: "<?php echo $nama_folder; ?>/DataWypoint-List/",
+	type: "POST",
+	data: {tabelname:b,page:a,maxlist:c},
+	cache: false,
+	success: function(msg){
+		$('#linkList1').html(msg);
+		$("#loding2").hide();
+		}
+	});
+};
+
+function InfoData(n){
+	var b = document.getElementById("NAMA_TB").value;
+	$.ajax({
+	url: "<?php echo $nama_folder; ?>/DataWypoint-Detil/",
+	type: "POST",
+	data: {idx:n,tabelname:b},
+	cache: false,
+	success: function(msg){
+		$('#InfoMetadataFoto').html(msg);
+		}
+	});
+};
+
+document.getElementById("CmdVerfikasi").onclick = function(){
+	var n = document.getElementById("DT_INDEX").value;
+	var b = document.getElementById("NAMA_TB").value;
+	$.ajax({
+	url: "<?php echo $nama_folder; ?>/DataWypoint-Verfikasi/",
+	type: "POST",
+	data: {index:n,tabelname:b},
+	cache: false,
+	success: function(msg){
+		$('#InfoMetadataFoto').html(msg);
+		}
+	});
+};
+
+document.getElementById("CmdNexPage").onclick = function(){
+  document.getElementById("Halaman").value = eval(document.getElementById("Halaman").value) +1;
+   LoadDataFoto();
+};
+document.getElementById("CmdBackPage").onclick = function(){
+  if(document.getElementById("Halaman").value >= 1){
+  	document.getElementById("Halaman").value = eval(document.getElementById("Halaman").value) -1;
+   	LoadDataFoto();
+  }
+};
+
 
 function Unggah(){ 			  
    //$("#preview").html();
@@ -190,5 +282,4 @@ function PosisiAwal(){
 document.getElementById("AppGIs01").className = "active";
 document.getElementById("AppGIs").className = "collapse in";
 </script>
-
 <?php } ?>
