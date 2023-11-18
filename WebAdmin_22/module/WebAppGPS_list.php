@@ -27,8 +27,9 @@ $n= 1;
 		echo '<td><img src="'.$nama_folder.'/images/toponimi/'.$tb[0].'_60x60_'.$row['namafile'].'" width="140" height="80" /></td>';
 		echo "<td>$Num .<b>$row[namobj]</b></td>";
 		echo "<td>$row[tanggal]<br>$row[wadmkd], Kec.$row[wadmkc], Kab.$row[wadmkk]</td>";
+		$INfDel = "'$tb[0]_60x60_$row[namafile]'";
 		echo '<td><button type="button" class="btn btn-xs btn-success" data-toggle="modal" data-target="#MetadataleModal" onclick="InfoData('.$row['idgps'].')">Verifikasi</button>
-				  <button type="button" class="btn btn-xs btn-danger">Hapus</button></td>';
+				  <button type="button" class="btn btn-xs btn-danger"  data-toggle="modal" data-target=".bd-example-modal-sm"  onclick="MsgDelete('.$row['idgps'].','.$INfDel.')">Hapus</button></td>';
 		echo '</tr>';
 	$n++; }
   echo '</table>';

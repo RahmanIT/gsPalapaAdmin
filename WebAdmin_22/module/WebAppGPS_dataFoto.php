@@ -15,7 +15,7 @@ $row=pg_fetch_assoc($result);
     <td>Tanggal Posting</td>
     <td>: <?php echo $row["tanggal"]; ?></td>
   </tr>
-    <tr>
+  <tr>
     <td>Keterangan</td>
     <td>: <?php echo $row["remark"]; ?></td>
   </tr>
@@ -41,7 +41,7 @@ $row=pg_fetch_assoc($result);
   </tr>
   <tr>
     <td>Koordinat </td>
-    <td><?php echo $row["latitude"].' '.$row["longitude"]; ?></td>
+    <td>[<?php echo $row["latitude"].','.$row["longitude"]; ?>]</td>
   </tr>
   <tr>
     <td>Akurasi</td>
@@ -72,8 +72,12 @@ $row=pg_fetch_assoc($result);
     <td>: <?php echo $row["namafile"]; ?></td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>Verfikasi</td>
+    <td> <?php echo $row["verfikasidate"]; ?></td>
+  </tr>
+    <tr>
+    <td>Verfikator</td>
+    <td> <?php echo $row["vefi_nama"]; ?></td>
   </tr>
   <tr>
     <td colspan="2"><?php echo '<img src="'.$nama_folder.'/images/toponimi/'.$tb[0].'_1200x800_'.$row['namafile'].'" width="100%"  />'; ?></td>

@@ -14,7 +14,7 @@ $waktu = time();
 $query = "UPDATE \"WYPOINT\".\"$nmTbMD\" set verfikasidate='$tglP', vefi_nama='$nama', vefi_waktu=$waktu WHERE  metadataid=$ind";
 $result2 = pg_query($pgdb, $query)or die('<div class="alert alert-warning" role="alert">'.pg_last_error().'</div>');
 if($result2){
-  echo '<div class="alert alert-success" role="alert">berhasil meverfikasi '.$nmTbMD.' metadataid : '.$ind.'</div>';
+  echo '<div class="alert alert-success" role="alert">berhasil memverifikasi '.$nmTbMD.' metadataid : '.$ind.'</div>';
 }
 pg_close($pgdb);
 }?>

@@ -78,7 +78,7 @@
                      <div id='loding' style='display:none'><img src="<?php echo $nama_folder; ?>/images/loader.gif" alt="Uploading...."/></div>                             
                     <div class="box-footer" align="right">
                         <button type="button" id="CmdCancel" onclick="PosisiAwal()" class="btn btn-lg btn-warning">Batal</button>
-                        <button type="button" id="CmdSave" onClick="VerifikasiData()" class="btn btn-lg btn-primary">Apply</button>
+                        <button type="button" id="CmdSave" onClick="VerifikasiData()" class="btn btn-lg btn-primary">Terapkan</button>
                     </div>                                                    
                   </form>
                   <p>&nbsp;</p>
@@ -89,7 +89,7 @@
   <div class="col-lg-8 text-center">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 onClick="TampilkanTabel()" style="cursor:pointer;">Daftar Data Geotagging</h3>
+                    <h3 onClick="LoadDataFoto()" style="cursor:pointer;">Daftar Data Geotagging</h3>
                 </div>
                 <div align="right">
                 			<select name="CboDataMax" id="CboDataMax" onchange="LoadDataFoto()" style="font-size:14px; margin:5px; padding:4px;">
@@ -124,8 +124,29 @@
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Tutup</button>
          <button type="button" id="CmdVerfikasi" class="btn btn-success">Verifikasi</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!------------------------------------------------------------------->
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <h5 class="modal-title" id="exampleModalLabel">Anda yakin menghapus data ini...?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="InfoDelete" align="center">
+         
+      </div>
+      <input name="KodeDelete" type="hidden" id="KodeDelete" value="" />
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        <button type="button" id="CmdHapus" class="btn btn-danger">Hapus</button>
       </div>
     </div>
   </div>
@@ -209,6 +230,29 @@ function InfoData(n){
 		}
 	});
 };
+
+function MsgDelete(i,m){
+   document.getElementById("InfoDelete").innerHTML = '<img src="<?php echo $nama_folder; ?>/images/toponimi/'+m+'" width="140" height="80" />';
+   document.getElementById("KodeDelete").value = i;
+   document.getElementById("CmdHapus").style.display = 'inline';
+};
+
+document.getElementById("CmdHapus").onclick = function(){
+  	var n = document.getElementById("KodeDelete").value;
+	var b = document.getElementById("NAMA_TB").value;
+	$.ajax({
+	url: "<?php echo $nama_folder; ?>/DataWypoint-Delete/",
+	type: "POST",
+	data: {index:n,tabelname:b},
+	cache: false,
+	success: function(msg){
+		$('#InfoDelete').html(msg);
+		document.getElementById("CmdHapus").style.display = 'none';
+		LoadDataFoto();
+		}
+	});
+};
+
 
 document.getElementById("CmdVerfikasi").onclick = function(){
 	var n = document.getElementById("DT_INDEX").value;

@@ -19,6 +19,10 @@ if(isset($_SESSION['P'])){
 require_once('Connections/Congis.php');
 
 switch ($segmen2) {
+case "rest-auth" : 
+	 include('WebAdmin_22/module/login_RestApi.php'); 
+	break;
+	
 case "files" : 
 	 include('WebAdmin_22/library/file_render_FOTO.php'); 
 	break;
@@ -479,9 +483,6 @@ case "BackupSQLList.jsp" :
 	 include('WebAdmin_22/module/BackupDbSQL_list.php'); 
 	break;
 
-case "rest-auth" : 
-	 include('WebAdmin_22/module/login_RestApi.php'); 
-	break;
 
 //-------------------------------------
 case "GetDataAppID.jsp" : 
@@ -510,6 +511,10 @@ case "DataWypoint-Detil" :
 
 case "DataWypoint-Verfikasi" : 
 	 include('WebAdmin_22/module/WebAppGP_verfikasi.php'); 
+	break;
+
+case "DataWypoint-Delete" : 
+	 include('WebAdmin_22/module/WebAppGPS_delete.php'); 
 	break;
 //--------------------------
 default;

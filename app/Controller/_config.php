@@ -21,5 +21,5 @@ $confg["pg_user"] = "postgres";
 $confg["pg_pass"] = "postgres";
 $confg["pg_dbnm"] = "KEMISKINAN";
 $conf["PopupModule"] = "<option value='auto'>-- Mode Otomatis --</option><option value='modulGeoAI@p3ke'> >> GEOSTATISTIK (P3KE)</option>";
-$conf["api-palapa"] = "http://localhost/api-palapa/";
+$conf["api-palapa"] = "http://localhost:8000/api-palapa/";
 ?>
