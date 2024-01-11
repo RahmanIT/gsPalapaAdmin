@@ -13,15 +13,22 @@ $segmen5   = $url[5];
 $segmen6   = $url[6];
 require_once('app/Controller/_config.php');
 $nama_folder = $conf["Folder"];
+
 if(isset($_SESSION['P'])){
-	$P = json_decode($_SESSION['P'], true);
+	$P = json_decode($_SESSION['P'], true);	
 }
+
 require_once('Connections/Congis.php');
 
 switch ($segmen2) {
 case "rest-auth" : 
 	 include('WebAdmin_22/module/login_RestApi.php'); 
 	break;
+
+case "rest-auth-tokenred" : 
+	 include('WebAdmin_22/module/login_readJsonSesi.php'); 
+	break;
+	
 case "files" : 
 	 include('WebAdmin_22/library/file_render_FOTO.php'); 
 	break;
@@ -269,6 +276,9 @@ case "Hapus-Kategori.jsp" :
 //case "Hapus-SubMenu.jsp" : 
 //	 include('WebAdmin/module/SubMenu_delete.php'); 
 //	break;	
+//case "Upadte-sambutan.jsp" : 
+//	 include('WebAdmin/module/info_pendaftaran_post.php'); 
+//	break;
 //----------------------------------------------------
 case "Tabel-Sosmed.jsp" : 
 	 include('WebAdmin/module/Sosmed_tabel.php'); 
@@ -283,9 +293,6 @@ case "Hapus-Sosmed.jsp" :
 	 include('WebAdmin/module/Sosmed_delete.php'); 
 	break;	
 
-//case "Upadte-sambutan.jsp" : 
-//	 include('WebAdmin/module/info_pendaftaran_post.php'); 
-//	break;
 //----------------------------------------------------	
 case "Tabel-Pengunjung.jsp" : 
 	 include('WebAdmin_22/Pengunjung.php'); 
@@ -474,7 +481,6 @@ case "BackupDB.jps" :
 case "BackupSQLList.jsp" : 
 	 include('WebAdmin_22/module/BackupDbSQL_list.php'); 
 	break;
-
 
 //-------------------------------------
 case "GetDataAppID.jsp" : 

@@ -160,16 +160,20 @@ function EditDataSandi(){
                             <a href="<?php echo $conf["GeoServisDomain"]; ?>/ReLogin/index?key=<?php echo $keyL; ?>" target="_blank"><i class="fa fa-fw fa-globe"></i>Geo Servis</a>
                         </li>
                         <li>
-                            <a href="/WebPortal/GeoVista/" target="_blank"><i class="fa fa-fw fa-globe"></i>Geovista</a>
+                            <a href="<?php echo $conf["Domain"] ?>WebPortal/GeoVista/" target="_blank"><i class="fa fa-fw fa-globe"></i>Geovista</a>
                         </li>
-<?php /*?>                        <li>
-                            <a href="http://sip.kalsel-sdi.web.id/Trasmisi/login?key=<?php echo $keyL; ?>" target="_blank"><i class="fa fa-fw fa-globe"></i>Spasial Anlisis</a>
-                        </li><?php */?>
+                        <?php 
+								$dt = date('Y_m_d_h');
+								$keyMap =md5($P[0]['KD_USER'].'gsAdmin'.$dt.'kalsel');
+						?>
+                        <li>
+                            <a href="/gsPalapa/rest-auth/<?php echo $keyMap; ?>" target="_blank"><i class="fa fa-fw fa-globe"></i>OneMap GeoAI</a>
+                        </li>
                         <li>
                             <a href="<?php echo $conf["Geoserver"]; ?>/web" target="_blank"><i class="fa fa-fw fa-tasks"></i>Geoserver A</a>
                         </li>
                         <li>
-                            <a href="https://geoportal.kalselprov.go.id/arcgis/rest/services/Kalsel" target="_blank"><i class="fa fa-fw fa-tasks"></i>Arcgis Server</a>
+                            <a href="<?php echo $conf["Domain"]; ?>/arcgis/rest/services/Kalsel" target="_blank"><i class="fa fa-fw fa-tasks"></i>Arcgis Server</a>
                         </li>
                         <li>
                             <a href="/WebPortal/" target="_blank"><i class="fa fa-fw fa-th-large"></i>WebPortal</a>
@@ -194,7 +198,7 @@ function EditDataSandi(){
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['MM_User']; ?><b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $P[0]["NAME"]; ?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="<?php echo $nama_folder; ?>/WebAdmin/EditProfile.jsp"><i class="fa fa-fw fa-user"></i> Profil</a>

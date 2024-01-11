@@ -157,5 +157,7 @@ function PosisiAwal(){
 <script>
 TampilkanTabel();
 PosisiAwal();
-</script>    
+document.getElementById("config01").className = "active";
+document.getElementById("Manage1").className = "collapse in";
+</script>  
 <?php } ?>

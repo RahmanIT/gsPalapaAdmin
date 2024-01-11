@@ -171,5 +171,4 @@ document.getElementById("config01").className = "active";
 document.getElementById("Manage1").className = "collapse in";
 </script>
 <?php
-mysqli_free_result($rsSetting);
  } ?>

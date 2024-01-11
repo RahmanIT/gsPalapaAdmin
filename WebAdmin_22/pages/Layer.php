@@ -169,9 +169,9 @@ function PosisiAwal(){
                   <textarea name="URL" class="form-control" id="URL" placeholder="URL Service"></textarea>
                 </div>
                 <div class="form-group row">
-                  <label class="col-sm-12 col-form-label">Layer Name</label><span id="InfoLyName"></span>
+                  <label class="col-sm-12 col-form-label">Layer Param</label><span id="InfoLyName"></span>
                    <div class="col-sm-10">
-                  <input  name="LyName" id="LyName" class="form-control" type="text" value="" placeholder="Nama Layer (for OGC)" maxlength="255" />
+                  <input  name="LyName" id="LyName" class="form-control" type="text" value="" placeholder="Nama Layer (for OGC)" maxlength="255"  readonly="readonly"/>
                     </div>
                     <div class="col-sm-2" align="left">
                         <button class="btn btn-success" type="button" id="CmdAddCSW" onclick="TampilkanCSW()" data-toggle="modal" data-target="#exampleModalScrollable"><i class="fa fa-search"></i></button>
@@ -179,7 +179,7 @@ function PosisiAwal(){
                 </div>
                 <div class="form-group">
                   <label>Layer Native</label><span id="InfoLyName"></span>
-                  <input  name="LyName2" type="text" class="form-control" id="LyName2" placeholder="Nama Layer (forom OGC Geoserver)" value="" maxlength="255" readonly="readonly" />
+                  <input  name="LyName2" type="text" class="form-control" id="LyName2" placeholder="Nama Layer (forom OGC Geoserver)" value="" maxlength="255"  />
                 </div>                               
                 <div class="form-group">
                 <label>Layer Type</label><span id="InfoMapType"></span>
