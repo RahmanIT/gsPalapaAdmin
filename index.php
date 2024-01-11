@@ -28,6 +28,10 @@ case "rest-auth" :
 case "rest-auth-tokenred" : 
 	 include('WebAdmin_22/module/login_readJsonSesi.php'); 
 	break;
+
+case "celar-auth" : 
+	 include('WebAdmin_22/module/login_celarfilesSesi.php'); 
+	break;
 	
 case "files" : 
 	 include('WebAdmin_22/library/file_render_FOTO.php'); 
