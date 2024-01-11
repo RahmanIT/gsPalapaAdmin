@@ -1,4 +1,4 @@
-<?php error_reporting(0);  if($P[0]["ROLE"]>=2 && $P[0]["ROLE"]<=3 && $P[0]["EMAIL"]!=""){ 
+<?php error_reporting(1);  if($P[0]["ROLE"]>=2 && $P[0]["ROLE"]<=3 && $P[0]["EMAIL"]!=""){ 
 	if (isset($_POST['txtKeyB']) && $_POST['txtKeyB'] == '43kfr02738@geoportalkalsel') {
 	include('library/function_berita.php');
 	$max_file_size = 1024*1024; // 200kb
@@ -30,7 +30,7 @@
 						  GetSQLValueString($Congis,$_POST['CREATED'], "text"),
 						  GetSQLValueString($Congis,$_POST['TANGGAL'], "date"),
 						  GetSQLValueString($Congis,$namaFoto, "text"),
-						  GetSQLValueString($Congis,$_SESSION['KdUser'], "int"));
+						  GetSQLValueString($Congis,$P[0]['KD_USER'], "int"));
 	  $Result1 = mysqli_query($Congis, $Qrt) or die(mysqli_error());
 	  $tglNf = date("Y-m-d H:i:s");
 	  $wkt = time();

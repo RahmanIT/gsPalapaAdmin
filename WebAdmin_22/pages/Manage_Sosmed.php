@@ -97,10 +97,10 @@ function PosisiAwal(){
                         </h1>
                         <ol class="breadcrumb">
 							<li>
-                                <i class="fa fa-dashboard"></i>  <a href="../../WebAdmin/pages/home.html">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="<?php echo $nama_folder; ?>/WebAdmin/pages/home.html">Dashboard</a>
                             </li>
                             <li>
-                                <i class="fa fa-gear"></i><a href="../../WebAdmin/pages/Setting.html">Managemant</a>
+                                <i class="fa fa-gear"></i><a href="<?php echo $nama_folder; ?>/WebAdmin/pages/Setting.html">Managemant</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-pencil"></i> Sosial Media

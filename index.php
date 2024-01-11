@@ -2,7 +2,7 @@
 if (!isset($_SESSION)) {
   session_start();
 }
-error_reporting(0);
+error_reporting(1);
 date_default_timezone_set('Asia/Makassar');
 $url = explode("/",$_SERVER["REQUEST_URI"]);
 $segmen1   = $url[1];
@@ -22,28 +22,23 @@ switch ($segmen2) {
 case "rest-auth" : 
 	 include('WebAdmin_22/module/login_RestApi.php'); 
 	break;
-	
 case "files" : 
 	 include('WebAdmin_22/library/file_render_FOTO.php'); 
 	break;
-
 case "images" : 
 	 include('WebAdmin_22/library/file_render_FOTO_imges.php'); 
 	break;
-
 case "download" : 
 	 include('WebAdmin_22/library/file_render_download.php'); 
 	break;	
-		
+	
 //---------------------------------------
 case "Upload-pdf-save" : 
 	 include('library/Download_post.php'); 
 	break;
-	
 case "Upload-pdf-update" : 
 	 include('library/Download_update.php'); 
 	break;	
-
 case "CSW-geoservice" : 
 	 include('library/CSW_API_DataTabel.php'); 
 	break;
@@ -51,15 +46,12 @@ case "CSW-geoservice" :
 case "Upload-images-berita" : 
 	 include('WebAdmin_22/module/UploadFhoto.php'); 
 	break;
-	
 case "Geovista-Seting" : 
 	 include('WebAdmin_22/module/Managemant_vista.php'); 
 	break;	
-
 case "FeatureKatalog.jsp" : 
 	 include('WebAdmin_22/module/feature_Katalog.php'); 
 	break;	
- 
 case "WebAdmin" : 
 	 include('WebAdmin_22/realy_page.php'); 
 	break;
@@ -278,18 +270,18 @@ case "Hapus-Kategori.jsp" :
 //	 include('WebAdmin/module/SubMenu_delete.php'); 
 //	break;	
 //----------------------------------------------------
-//case "Tabel-Sosmed.jsp" : 
-//	 include('WebAdmin/module/Sosmed_tabel.php'); 
-//	break;	
-//case "Sosmed.jsp" : 
-//	 include('WebAdmin/module/Sosmed_post.php'); 
-//	break;	
-//case "Edit-Sosmed.jsp" : 
-//	 include('WebAdmin/module/Sosmed_update.php'); 
-//	break;	
-//case "Hapus-Sosmed.jsp" : 
-//	 include('WebAdmin/module/Sosmed_delete.php'); 
-//	break;	
+case "Tabel-Sosmed.jsp" : 
+	 include('WebAdmin/module/Sosmed_tabel.php'); 
+	break;	
+case "Sosmed.jsp" : 
+	 include('WebAdmin/module/Sosmed_post.php'); 
+	break;	
+case "Edit-Sosmed.jsp" : 
+	 include('WebAdmin/module/Sosmed_update.php'); 
+	break;	
+case "Hapus-Sosmed.jsp" : 
+	 include('WebAdmin/module/Sosmed_delete.php'); 
+	break;	
 
 //case "Upadte-sambutan.jsp" : 
 //	 include('WebAdmin/module/info_pendaftaran_post.php'); 

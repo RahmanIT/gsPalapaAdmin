@@ -1,5 +1,4 @@
 <?php error_reporting(0);  if($P[0]["ROLE"]>=2 && $P[0]["ROLE"]<=3 && $P[0]["EMAIL"]!=""){ 
-	mysqli_select_db($Congis, $database_Confdbms);
 	$query_rsLink = "SELECT * FROM tb_link";
 	$rsLink = mysqli_query($Congis, $query_rsLink) or die(mysqli_error());
 	$row_rsLink = mysqli_fetch_assoc($rsLink);
@@ -29,5 +28,5 @@
 	 </tbody>
 	</table>
 	<?php
-	mysqli_free_result($rsLink);
+	
 } ?>

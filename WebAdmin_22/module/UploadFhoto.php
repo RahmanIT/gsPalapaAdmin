@@ -13,17 +13,22 @@ $valid_formats = array("jpg","png","jpeg");
 if($_FILES['filUpload']['type']=="image/jpeg" or $_FILES['filUpload']['type']=="image/jpg" or $_FILES['filUpload']['type']=="image/png"){
     $uploaddir = "files/"; //a directory inside
         $filename = stripslashes($_FILES['filUpload']['name']);
+		echo $filename;
         $size=filesize($_FILES['filUpload']['tmp_name']);
           $ext = getExtension($filename);
           $ext = strtolower($ext);		  
          if(in_array($ext,$valid_formats)){
-		   $image_name=time().$filename;
-		   $newname=$conf["DataDir"].$uploaddir.$image_name;
+		   $image_name = time().$filename;
+		   $newname = $conf["DataDir"].$uploaddir.$image_name;
+		   echo $newname;
            if (move_uploaded_file($_FILES['filUpload']['tmp_name'], $newname))  {
-	       		$tgl=date("Y-m-d H:m:s");
-				$kdUSer=$_SESSION['KdUser'];
-		   		mysqli_select_db($Congis, $database_Confdbms);
-	      		mysqli_query($Congis, "INSERT INTO tb_fhoto_explor(FOTO,FILE_SIZE,TANGGAL,KD_USER) VALUES('$image_name','$size','$tgl',$kdUSer)");
+	       		$tgl=date("Y-m-d H:m:s");				
+					$Query = sprintf("INSERT INTO tb_fhoto_explor(FOTO,FILE_SIZE,TANGGAL,KD_USER) VALUES(%s,%s,%s,%s)",
+								GetSQLValueString($Congis,$image_name, "text"),
+								GetSQLValueString($Congis,$size,"text"),
+								GetSQLValueString($Congis,$tgl, "date"),
+								GetSQLValueString($Congis,$P[0]['KD_USER'], "int"));
+	      		mysqli_query($Congis, $Query);
 	      } else  {
 	         echo 'You have exceeded the size limit! Upload gagal! ';
           }       

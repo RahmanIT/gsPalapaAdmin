@@ -285,6 +285,8 @@ function EditDataSandi(){
                             <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>Manajemen-kategori.jsp" ><i class="fa fa-fw fa-th-list"></i>Kategori</a></li>
                             <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>Binder.html"><i class="fa fa-fw fa-tasks"></i>Binder</a></li>
                             <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>link.html"><i class="fa fa-fw fa-link"></i>Link</a></li>
+                             <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>SosialMedia.jsp"><i class="fa fa-fw fa-instagram"></i>Sosial Media</a></li>
+                            
                            <?php /*?> <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>Manajemen-Users.jsp"><i class="fa fa-fw fa-user"></i>User Admin</a></li><?php */?>
                             <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>Backupdb.jsp" ><i class="fa fa-fw fa-database"></i>Backup DB</a></li>
                         </ul>
@@ -323,7 +325,10 @@ function EditDataSandi(){
 				case "Layer.jsp" : 
 	 				include('pages/Layer.php'); 
 					break;	
-		//=====================  WEB MANAJEMANT ========================		
+		//=====================  WEB MANAJEMANT ========================
+			case "SosialMedia.jsp" : 
+	 		    	include('pages/Manage_Sosmed.php'); 
+					break;		
 			
 			  case "SlideShow.jsp" : 
 	 				include('pages/Slide_Show.php'); 

@@ -1,27 +1,26 @@
 <?php error_reporting(0);  if($P[0]["ROLE"]>=2 && $P[0]["ROLE"]<=3 && $P[0]["EMAIL"]!=""){ ?>
-<script src="<?php echo $nama_folder; ?>/js/jquery.wallform.js"></script>
+<script src="<?php echo $nama_folder; ?>/Libs/js/jquery.wallform.js"></script>
 <script>
-function Unggah(){ 			  
-			       //$("#preview").html();  
-				   $("#form1").ajaxForm({target: '#linkList1', 
-				     beforeSubmit:function(){ 
-					
-					console.log('ttest');
-					$("#imageloadstatus").show();
-					 $("#imageloadbutton").hide();
-					 }, 
-					success:function(){ 
-				    console.log('test');
-					 TampilkanTabel();
-					 PosisiAwal();
-					 $("#imageloadstatus").hide();
-					 $("#imageloadbutton").show();
-					}, 
-					error:function(){ 
-					console.log('xtest');
-					 $("#imageloadstatus").hide();
-					$("#imageloadbutton").show();
-					} }).submit();
+function Unggah(){ 			   
+   $("#form1").ajaxForm({target: '#linkList1', 
+	 beforeSubmit:function(){ 
+	
+	console.log('mulai simpan');
+	$("#imageloadstatus").show();
+	 $("#imageloadbutton").hide();
+	 }, 
+	success:function(){ 
+	console.log('simpan berhasil');
+	 TampilkanTabel();
+	 PosisiAwal();
+	 $("#imageloadstatus").hide();
+	 $("#imageloadbutton").show();
+	}, 
+	error:function(){ 
+	console.log('gagal posting kategori');
+	 $("#imageloadstatus").hide();
+	$("#imageloadbutton").show();
+	} }).submit();
  };
 
 function Verifikasi(){

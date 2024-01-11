@@ -167,7 +167,8 @@ background:#666666;
                                     <button type="button" id="CmdSave" onClick="Verifikasi()" class="btn btn-lg btn-primary">Upload</button>
                                     <button type="button" id="CmdUpdate"  onClick="VerifikasiEdit()" class="btn btn-lg btn-primary">Update</button>
                 				</div>  
-                                <input name="KD_FILE" id="KD_FILE" type="hidden" value="" />                              
+                                <input name="KD_FILE" id="KD_FILE" type="hidden" value="" />  
+                                                            
                               </form>
                               <p>&nbsp;</p>
    							</div>
