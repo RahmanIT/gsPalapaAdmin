@@ -160,11 +160,11 @@ function EditDataSandi(){
                             <a href="<?php echo $conf["GeoServisDomain"]; ?>/ReLogin/index?key=<?php echo $keyL; ?>" target="_blank"><i class="fa fa-fw fa-globe"></i>Geo Servis</a>
                         </li>
                         <li>
-                            <a href="<?php echo $conf["Domain"] ?>WebPortal/GeoVista/" target="_blank"><i class="fa fa-fw fa-globe"></i>Geovista</a>
+                            <a href="<?php echo $conf["Domain"] ?>/WebPortal/GeoVista/" target="_blank"><i class="fa fa-fw fa-globe"></i>Geovista</a>
                         </li>
                         <?php 
-								$dt = date('Y_m_d_h');
-								$keyMap =md5($P[0]['KD_USER'].'gsAdmin'.$dt.'kalsel');
+							$dt = date('Y_m_d_h');
+							$keyMap =md5($P[0]['KD_USER'].'gsAdmin'.$dt.'kalsel');
 						?>
                         <li>
                             <a href="/gsPalapa/rest-auth/<?php echo $keyMap; ?>" target="_blank"><i class="fa fa-fw fa-globe"></i>OneMap GeoAI</a>
@@ -176,7 +176,7 @@ function EditDataSandi(){
                             <a href="<?php echo $conf["Domain"]; ?>/arcgis/rest/services/Kalsel" target="_blank"><i class="fa fa-fw fa-tasks"></i>Arcgis Server</a>
                         </li>
                         <li>
-                            <a href="/WebPortal/" target="_blank"><i class="fa fa-fw fa-th-large"></i>WebPortal</a>
+                            <a href="<?php echo $conf["Domain"]; ?>/WebPortal/" target="_blank"><i class="fa fa-fw fa-th-large"></i>WebPortal</a>
                         </li>
                     </ul>
                 </li>
