@@ -29,6 +29,7 @@ background:#666666;
                         <h1 class="page-header">
                            Tulis Berita
                             <small>dan Upload gambar</small>
+                            <a class="btn btn-info" href="<?php echo $nama_folder; ?>/panduan/Setting_Berita.pdf" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> Panduan</a>
                         </h1>
                         <ol class="breadcrumb">
 							<li>

@@ -90,13 +90,14 @@ function EditData(N,S,t,l,d,i,trn,kd){
                         <h1 class="page-header">
                            Map Service
                             <small> tambahkan peta kedalam simpul jaringan</small>
+                             <a class="btn btn-info" href="<?php echo $nama_folder; ?>/panduan/Setting_LayersGeoVista.pdf" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> Panduan</a>
                         </h1>
                         <ol class="breadcrumb">
 							<li>
-                                <i class="fa fa-dashboard"></i>  <a href="../../WebAdmin/pages/home">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="<?php echo $nama_folder; ?>/WebAdmin/pages/home">Dashboard</a>
                             </li>
                             <li>
-                                <i class="fa fa-thumb-tack marker"></i><a href="../../WebAdmin/pages/Feature.jsp">Map Service</a>
+                                <i class="fa fa-thumb-tack marker"></i><a href="<?php echo $nama_folder; ?>/WebAdmin/pages/Feature.jsp">Map Service</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-pencil"></i>Manager

@@ -11,6 +11,7 @@
                         <h1 class="page-header">
                           Pengumuman
                             <small> bagikan informasi ke publik</small>
+                            <a class="btn btn-info" href="<?php echo $nama_folder; ?>/panduan/Setting_Pengumuman.pdf" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> Panduan</a>
                         </h1>
                         <ol class="breadcrumb">
 							<li>

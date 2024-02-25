@@ -172,6 +172,7 @@ function CloseImport(){
                     <div class="col-lg-12">
                         <h1 class="page-header">
                           Data WMS <small>daftar map servis  server Kemeterian/Lembaga/Pemda</small>
+                          <a class="btn btn-info" href="<?php echo $nama_folder; ?>/panduan/Setting_DataServis_JIGN.pdf" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> Panduan</a>
                         </h1>
                         <ol class="breadcrumb">
 							<li>

@@ -138,6 +138,7 @@ function PosisiAwal(){
         <h1 class="page-header">
           LAYER
             <small> default peta tematik  Web GIS</small>
+             <a class="btn btn-info" href="<?php echo $nama_folder; ?>/panduan/Setting_Layers_default.pdf" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> Panduan</a>
         </h1>
         <ol class="breadcrumb">
             <li>
@@ -178,7 +179,7 @@ function PosisiAwal(){
                     </div> 
                 </div>
                 <div class="form-group">
-                  <label>Layer Native</label><span id="InfoLyName"></span>
+                  <label>Layer Native Label</label><span id="InfoLyName"></span>
                   <input  name="LyName2" type="text" class="form-control" id="LyName2" placeholder="Nama Layer (forom OGC Geoserver)" value="" maxlength="255"  />
                 </div>                               
                 <div class="form-group">

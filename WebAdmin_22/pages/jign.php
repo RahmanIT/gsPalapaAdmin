@@ -120,13 +120,15 @@ function PosisiAwal(){
                         <h1 class="page-header">
                           JIGN
                             <small> data jaringan informasi geospasial nasional</small>
+                            <a class="btn btn-info" href="<?php echo $nama_folder; ?>/panduan/Setting_ServerJIGN.pdf" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> Panduan</a>
                         </h1>
+                        
                         <ol class="breadcrumb">
 							<li>
-                                <i class="fa fa-dashboard"></i>  <a href="../../WebAdmin/pages/home">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="<?php echo $nama_folder; ?>/WebAdmin/pages/home">Dashboard</a>
                             </li>
                             <li>
-                                <i class="fa fa-globe"></i><a href="../../WebAdmin/pages/jdsn.jps">JIGN</a>
+                                <i class="fa fa-globe"></i><a href="<?php echo $nama_folder; ?>/WebAdmin/pages/jdsn.jps">JIGN</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-pencil"></i> Daftar JIGN

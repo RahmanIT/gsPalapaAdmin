@@ -285,16 +285,16 @@ case "Hapus-Kategori.jsp" :
 //	break;
 //----------------------------------------------------
 case "Tabel-Sosmed.jsp" : 
-	 include('WebAdmin/module/Sosmed_tabel.php'); 
+	 include('WebAdmin_22/module/Sosmed_tabel.php'); 
 	break;	
 case "Sosmed.jsp" : 
-	 include('WebAdmin/module/Sosmed_post.php'); 
+	 include('WebAdmin_22/module/Sosmed_post.php'); 
 	break;	
 case "Edit-Sosmed.jsp" : 
-	 include('WebAdmin/module/Sosmed_update.php'); 
+	 include('WebAdmin_22/module/Sosmed_update.php'); 
 	break;	
 case "Hapus-Sosmed.jsp" : 
-	 include('WebAdmin/module/Sosmed_delete.php'); 
+	 include('WebAdmin_22/module/Sosmed_delete.php'); 
 	break;	
 
 //----------------------------------------------------	

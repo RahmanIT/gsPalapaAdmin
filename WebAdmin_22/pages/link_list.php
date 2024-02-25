@@ -110,13 +110,14 @@ function PosisiAwal(){
                         <h1 class="page-header">
                            Link
                             <small> informasi link website terkait</small>
+                            <a class="btn btn-info" href="<?php echo $nama_folder; ?>/panduan/Setting_DerekLInk.pdf" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> Panduan</a>
                         </h1>
                         <ol class="breadcrumb">
 							<li>
-                                <i class="fa fa-dashboard"></i>  <a href="../../WebAdmin/pages/home">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="<?php echo $nama_folder; ?>/WebAdmin/pages/home">Dashboard</a>
                             </li>
                             <li>
-                                <i class="fa fa-link"></i><a href="../../WebAdmin/pages/link.html">Conten</a>
+                                <i class="fa fa-link"></i><a href="<?php echo $nama_folder; ?>/WebAdmin/pages/link.html">Conten</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-pencil"></i> Link

@@ -71,7 +71,7 @@ function EditData(n,p,f,k){
 	document.getElementById("URL").value = f;
 	document.getElementById("FICON").value = p;
 	document.getElementById("KD").value = k;
-	document.getElementById("HederJudul").innerHTML = "Edit Kategori"
+	document.getElementById("HederJudul").innerHTML = "Edit Sosmed"
 	document.getElementById("CmdSave").style.display = "none";
 	document.getElementById("CmdUpdate").style.display = "inline-block";
 	document.getElementById("CmdCancel").style.display = "inline-block";
@@ -79,7 +79,7 @@ function EditData(n,p,f,k){
 
 function PosisiAwal(){
     document.getElementById("form1").action ="<?php echo $nama_folder; ?>/Sosmed.jsp"
- 	document.getElementById("HederJudul").innerHTML = "Tambahkan Kategori"
+ 	document.getElementById("HederJudul").innerHTML = "Tambahkan Sosmed"
 	document.getElementById("CmdCancel").style.display = "none";
 	document.getElementById("CmdUpdate").style.display = "none";
 	document.getElementById("CmdSave").style.display = "inline-block";
@@ -92,8 +92,8 @@ function PosisiAwal(){
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                           Kategori
-                            <small> setting kategori informasi</small>
+                          SOSMED
+                            <small> setting link sosial media</small>
                         </h1>
                         <ol class="breadcrumb">
 							<li>
@@ -129,7 +129,12 @@ function PosisiAwal(){
            				    <label>Icon</label><span id="InfoICON"></span>
 							<input  name="FICON" id="FICON"  class="form-control" type="text" value="" placeholder="Kode Icon" size="50" maxlength="255" />
                           </div> 
-                          
+                          <div class="form-group">
+                              <div class="form-check form-switch">
+                                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                                  <label class="form-check-label" for="flexSwitchCheckChecked">Aktif</label>
+                                </div>
+                          </div>
                           <div id='loding' style='display:none'><img src="<?php echo $nama_folder; ?>/images/loader.gif" alt="Uploading...."/></div>                             
  								<div class="box-footer" align="right">
                                     <button type="button" id="CmdCancel" onclick="PosisiAwal()" class="btn btn-lg btn-warning">Batal</button>
@@ -146,7 +151,7 @@ function PosisiAwal(){
               <div class="col-lg-8 text-center">
                 <div class="panel panel-default">
                    <div class="panel-body">
-                       <h3 onClick="TampilkanTabel()" style="cursor:pointer;">Daftar Kategori</h3>
+                       <h3 onClick="TampilkanTabel()" style="cursor:pointer;">Daftar Sosial Media</h3>
                        <div id="linkList1"></div> 
                    </div>
                 </div>

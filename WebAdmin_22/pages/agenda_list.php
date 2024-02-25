@@ -36,13 +36,14 @@ function HalamanSebelumnya(){
                         <h1 class="page-header">
                            Info
                             <small>Agenda kerja tahunan</small>
+                            <a class="btn btn-info" href="<?php echo $nama_folder; ?>/panduan/Setting_Agenda.pdf" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> Panduan</a>
                         </h1>
                         <ol class="breadcrumb">
 							<li>
-                                <i class="fa fa-dashboard"></i>  <a href="../../WebAdmin/pages/home">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="<?php echo $nama_folder; ?>/WebAdmin/pages/home">Dashboard</a>
                             </li>
                             <li>
-                                <i class="fa fa-info-circle"></i><a href="../../WebAdmin/pages/info.html">Info</a>
+                                <i class="fa fa-info-circle"></i><a href="<?php echo $nama_folder; ?>/WebAdmin/pages/info.html">Info</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-pencil"></i> Agenda

@@ -37,6 +37,7 @@ function HalamanSebelumnya(){
                         <h1 class="page-header">
                            Manajeman Berita
                             <small> kelola berita anda</small>
+                            <a class="btn btn-info" href="<?php echo $nama_folder; ?>/panduan/Setting_Berita.pdf" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> Panduan</a>
                         </h1>
                         <ol class="breadcrumb">
                           <li>

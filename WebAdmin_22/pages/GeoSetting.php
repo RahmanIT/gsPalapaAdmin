@@ -11,13 +11,14 @@ $totalRows_rsSetting = mysqli_num_rows($rsSetting);
                         <h1 class="page-header">
                            Pengaturan Map
                             <small> configurasi Geovista Web GIS</small>
+                             <a class="btn btn-info" href="<?php echo $nama_folder; ?>/panduan/Setting_GeoVista.pdf" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> Panduan</a>
                         </h1>
                         <ol class="breadcrumb">
 							<li>
-                                <i class="fa fa-dashboard"></i>  <a href="../../WebAdmin/pages/home.jsp">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="<?php echo $nama_folder; ?>/WebAdmin/pages/home.jsp">Dashboard</a>
                             </li>
                             <li>
-                                <i class="fa fa-gear"></i><a href="../../WebAdmin/pages/MapSetting.jsp">Geovista</a>
+                                <i class="fa fa-gear"></i><a href="<?php echo $nama_folder; ?>/WebAdmin/pages/MapSetting.jsp">Geovista</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-pencil"></i> General

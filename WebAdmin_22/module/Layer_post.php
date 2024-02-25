@@ -1,4 +1,4 @@
-<?php error_reporting(0);  if($P[0]["ROLE"]>=2 && $P[0]["ROLE"]<=3 && $P[0]["EMAIL"]!=""){ 
+<?php error_reporting(1);  if($P[0]["ROLE"]>=2 && $P[0]["ROLE"]<=3 && $P[0]["EMAIL"]!=""){ 
 		$updateSQL = sprintf("INSERT INTO layermap(LABEL, URL, TITLE, LYNAME, TYPE, VISIBLE, LYR_IDX, LOGIN_ST) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)",
 		GetSQLValueString($Congis,$_POST["NAMA"], "text"),
 		GetSQLValueString($Congis,$_POST["URL"], "text"),
@@ -8,7 +8,7 @@
 		GetSQLValueString($Congis, $_POST["CboVisible"], "date"),
 		GetSQLValueString($Congis, $_POST["LyIndex"], "int"),
 		GetSQLValueString($Congis, $_POST['CboLogin'], "text"));
-	$s = mysqli_query($Congis, $query) or die(mysqli_error());
+	$s = mysqli_query($Congis, $updateSQL) or die(mysqli_error());
 	$wkt = time();
 	$tglNf = date("Y-m-d H:i:s");
 	$nmA = $P[0]["INISIAL"];

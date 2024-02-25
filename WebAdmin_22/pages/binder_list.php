@@ -16,6 +16,7 @@ width:250px;
             <h1 class="page-header">
                Binder
                 <small> Gambar link inforasi terkait</small>
+                <a class="btn btn-info" href="<?php echo $nama_folder; ?>/panduan/Setting_Binder.pdf" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> Panduan</a>
             </h1>
             <ol class="breadcrumb">
                 <li>
