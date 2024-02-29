@@ -10,68 +10,73 @@ function getExtension($str)
          return $ext;
 }
 
-$valid_formats = array("jpg", "png", "gif","bmp","jpeg");
+$valid_formats = array("jpg", "png","jpeg");
 if(isset($_FILES["filUpload"])) {
     $uploaddir = "images/"; //a directory inside
         $filename = stripslashes($_FILES['filUpload']['name']);
         $size=filesize($_FILES['filUpload']['tmp_name']);
-        //get the extension of the file in a lower case format
           $ext = getExtension($filename);
-          $ext = strtolower($ext);
-     	
+          $ext = strtolower($ext);     	
          if(in_array($ext,$valid_formats))
          {
 		   $newname=$uploaddir.$filename;           
            if (move_uploaded_file($_FILES['filUpload']['tmp_name'], $newname))  {
 			   mysqli_select_db($Congis, $database_Confdbms);
 	      	  mysqli_query($Congis, "UPDATE tb_setting SET LOGO='$newname' WHERE KD_SET=1");
-
-			   
 	      } else  {
 	         echo 'You have exceeded the size limit! Upload gagal! ';
           }       
        } else { 
 	     	//echo 'Unknown extension!';
 	   }    
-   
 }else { echo "Tidak ada log"; }
-
 //==============================================================================
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "FormSetting")) {
-  $updateSQL = sprintf("UPDATE tb_setting SET SINGKATAN_ORG='%s',NAMA_ORG='%s', ALAMAT='%s', TELPON='%s', EMAIL='%s', EMAIL_DOMAIN='%s', DOMAIN='%s', NAMA_PT='%s', ftp_id1='%s', ftp_id1Ui='%s',ftp_id1Ps='%s', ftp_id2='%s', ftp_id2Ui='%s',ftp_id2Ps='%s', ftp_id3='%s', ftp_id3Ui='%s', ftp_id3Ps='%s', ftpTemp_DIR='%s' WHERE KD_SET=%s",
-                       $_POST['SINGKATAN_ORG'],
-					   $_POST['NAMA_ORG'],
-                       $_POST['ALAMAT'],
-                       $_POST['TELPON'],
-                       $_POST['EMAIL1'],
-                       $_POST['EMAIL_DOMAIN'],
-                       $_POST['DOMAIN'],
-					   $_POST['NAMA_PT'],
-					   $_POST['TxtFtpSrvA'],
-					   $_POST['TxtIDFtpSrvA'],
-                       $_POST['TxtPwdFtpSrvA'],
-					   $_POST['TxtFtpSrvB'],
-					   $_POST['TxtIDFtpSrvB'],
-					   $_POST['TxtPwdFtpSrvB'],
-					   $_POST['TxtFtpSrvC'],
-					   $_POST['TxtIDFtpSrvC'],
-					   $_POST['TxtPwdFtpSrvC'],
-					   $_POST['TxtTempDirSrvC'],
-                       $_POST['KD_SET']);
-  $Result1 = mysqli_query($Congis, $updateSQL) or die(mysqli_error());
-  $updateGoTo = "#";
-  if (isset($_SERVER['QUERY_STRING'])) {
-    $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
-    $updateGoTo .= $_SERVER['QUERY_STRING'];
-  }
-  $tglNf = date("Y-m-d H:m:s");
-  $wkt = time();
-  $nmA = $_SESSION['NAMA'];
-  mysqli_query($Congis,"INSERT INTO tb_alert(KDNF, MSG_INFO, TANGGAL, WAKTU) VALUES ('15','Update setting Website info','$tglNf','$wkt','$nmA')");
-  $updateGoTo = "WebAdmin/Manajemen-Web.jsp";
-  header(sprintf("Location: %s", $updateGoTo));
+  $updateSQL = sprintf("UPDATE tb_setting SET SINGKATAN_ORG=%s,NAMA_ORG=%s, ALAMAT=%s, TELPON=%s, EMAIL=%s, EMAIL_DOMAIN=%s, DOMAIN=%s, NAMA_PT=%s, ftp_id1=%s, ftp_id1Ui=%s,ftp_id1Ps=%s, ftp_id2=%s, ftp_id2Ui=%s,ftp_id2Ps=%s, ftp_id3=%s, ftp_id3Ui=%s, ftp_id3Ps=%s, ftpTemp_DIR=%s, webtema=%s WHERE KD_SET=%s",
+                       GetSQLValueString($Congis,$_POST['SINGKATAN_ORG'], "text"),
+					   GetSQLValueString($Congis,$_POST['NAMA_ORG'], "text"),
+                       GetSQLValueString($Congis,$_POST['ALAMAT'],"text"),
+                       GetSQLValueString($Congis,$_POST['TELPON'], "text"),
+                       GetSQLValueString($Congis,$_POST['EMAIL1'], "text"),
+                       GetSQLValueString($Congis,$_POST['EMAIL_DOMAIN'], "text"),
+                       GetSQLValueString($Congis,$_POST['DOMAIN'], "text"),
+					   GetSQLValueString($Congis,$_POST['NAMA_PT'], "text"),
+					   GetSQLValueString($Congis,$_POST['TxtFtpSrvA'], "text"),
+					   GetSQLValueString($Congis,$_POST['TxtIDFtpSrvA'], "text"),
+                       GetSQLValueString($Congis,$_POST['TxtPwdFtpSrvA'], "text"),
+					   GetSQLValueString($Congis,$_POST['TxtFtpSrvB'], "text"),
+					   GetSQLValueString($Congis,$_POST['TxtIDFtpSrvB'], "text"),
+					   GetSQLValueString($Congis,$_POST['TxtPwdFtpSrvB'], "text"),
+					   GetSQLValueString($Congis,$_POST['TxtFtpSrvC'], "text"),
+					   GetSQLValueString($Congis,$_POST['TxtIDFtpSrvC'], "text"),
+					   GetSQLValueString($Congis,$_POST['TxtPwdFtpSrvC'], "text"),
+					   GetSQLValueString($Congis,$_POST['TxtTempDirSrvC'], "text"),
+					   GetSQLValueString($Congis,$_POST['CboThema'], "text"),
+                       GetSQLValueString($Congis,$_POST['KD_SET'], "text"));				  
+    $Result1 = mysqli_query($Congis, $updateSQL) or die(mysqli_error());
+  	$wkt = time();
+	$tglNf = date("Y-m-d H:i:s");
+	$nmA = $P[0]["INISIAL"];
+			$Query = sprintf("INSERT INTO tb_alert(KDNF, MSG_INFO, TANGGAL, WAKTU, USER_NAME) VALUES (%s,%s,%s,%s,%s)",
+			GetSQLValueString($Congis,15, "int"),
+			GetSQLValueString($Congis,"Updating setting WebPortal Config info ", "text"),
+			GetSQLValueString($Congis,$tglNf, "date"),
+			GetSQLValueString($Congis,$wkt, "text"),
+			GetSQLValueString($Congis,$nmA, "text"));
+			mysqli_query($Congis, $Query);
+	//membuat files config
+	$json["INISIAL"] = $_POST['SINGKATAN_ORG'];
+	$json["NAMA"] = $_POST['NAMA_ORG'];
+	$json["ALAMAT"] = $_POST['ALAMAT'];
+	$json["TELPON"] = $_POST['TELPON'];
+	$json["EMAIL1"] = $_POST['EMAIL1'];
+	$json["DOMAIN"] = $_POST['DOMAIN'];
+	$json["TEMA"] = $_POST['CboThema'];
+	$dataWrite = json_encode($json);
+	$filepath = $conf["DataDir"]."WebPortal_config.json";		
+	file_put_contents($filepath, $dataWrite);		
 }
+header("Location: $nama_folder/WebAdmin/Manajemen-Web.jsp");
 
 ?>
 

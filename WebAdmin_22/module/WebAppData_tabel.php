@@ -4,7 +4,7 @@
 	if (isset($_GET['model'])) {
 	  $colname_Rs = $_GET['model'];
 	}
-	$query_Rs = sprintf("SELECT * FROM tb_modelling_data WHERE KD_MODEL = %s ORDER BY MAPIDX ASC",$colname_Rs);
+	$query_Rs = sprintf("SELECT  `tb_modelling_group`.`NAMAGROUP`,  `tb_modelling_data`.`KDMAP`,  `tb_modelling_data`.`KD_MODEL`,  `tb_modelling_data`.`NM_MAP`,  `tb_modelling_data`.`URL_MAP`,  `tb_modelling_data`.`LY_NAME`,  `tb_modelling_data`.`VISIBLE`,  `tb_modelling_data`.`TYPE`,  `tb_modelling_data`.`MAPIDX`,  `tb_modelling_data`.`LY_EXTEND`,  `tb_modelling_data`.`KDGROUP` AS `KDGROUP1` FROM  `tb_modelling_data`  LEFT JOIN `tb_modelling_group` ON `tb_modelling_data`.`KDGROUP` =`tb_modelling_group`.`KDGROUP` WHERE  `tb_modelling_data`.`KD_MODEL` = %s ORDER BY MAPIDX ASC",$colname_Rs);
 	$Rs = mysqli_query($Congis, $query_Rs) or die(mysqli_error());
 	$row_Rs = mysqli_fetch_assoc($Rs);
 	$totalRows_Rs = mysqli_num_rows($Rs);
@@ -13,6 +13,7 @@
 	  <tr>
 		<td width="92" align="center">Kode</td>
 		<td width="544" align="center">Nama Peta</td>
+        <td width="544" align="center">group</td>
 		<td width="108" align="center">Type</td>
 		<td width="101" align="center">Index</td>
 		 <td width="157" align="center">#</td>
@@ -21,6 +22,7 @@
 		<tr>
 		  <td align="center"><?php echo $row_Rs['KDMAP']; ?></td>
 		  <td><?php echo $row_Rs['NM_MAP']; ?></td>
+          <td><?php echo $row_Rs['NAMAGROUP']; ?></td>
 		  <td align="center"><?php echo $row_Rs['TYPE']; ?></td>
 		  <td align="center"><?php echo $row_Rs['MAPIDX']; ?></td>
 		  <td align="center">

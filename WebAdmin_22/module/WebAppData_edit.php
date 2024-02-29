@@ -1,5 +1,5 @@
 <?php error_reporting(0);  if($P[0]["ROLE"]>=2 && $P[0]["ROLE"]<=3 && $P[0]["EMAIL"]!=""){
-	$query=sprintf("UPDATE tb_modelling_data SET  KD_MODEL=%s, NM_MAP=%s, URL_MAP=%s, LY_NAME=%s, VISIBLE=%s, TYPE=%s, MAPIDX=%s, LY_EXTEND=%s WHERE KDMAP=%s",
+	$query=sprintf("UPDATE tb_modelling_data SET  KD_MODEL=%s, NM_MAP=%s, URL_MAP=%s, LY_NAME=%s, VISIBLE=%s, TYPE=%s, MAPIDX=%s, LY_EXTEND=%s, KDGROUP=%s WHERE KDMAP=%s",
 			GetSQLValueString($Congis,$_POST["CboAp"], "int"),
 			GetSQLValueString($Congis,$_POST["NM_PETA"], "text"),
 			GetSQLValueString($Congis,$_POST["URL_SERVICE"], "text"),
@@ -8,6 +8,7 @@
 			GetSQLValueString($Congis,$_POST["TYPE_SERVICE"], "text"),
 			GetSQLValueString($Congis,$_POST["IDX_SERVICE"], "int"),
 			GetSQLValueString($Congis,$_POST["LY_EXTD"], "text"),
+			GetSQLValueString($Congis,$_POST["KDGROUP"], "int"),
 			GetSQLValueString($Congis,$_POST["KdID"], "int"));
 	$s = mysqli_query($Congis, $query) or die(mysqli_error());
 	  $tglNf = date("Y-m-d H:i:s");

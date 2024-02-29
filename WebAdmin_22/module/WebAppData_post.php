@@ -1,5 +1,5 @@
 <?php error_reporting(0);  if($P[0]["ROLE"]>=2 && $P[0]["ROLE"]<=3 && $P[0]["EMAIL"]!=""){
-	$query= sprintf("INSERT INTO tb_modelling_data(KD_MODEL, NM_MAP, URL_MAP, LY_NAME, VISIBLE, TYPE, MAPIDX, LY_EXTEND) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)",
+	$query= sprintf("INSERT INTO tb_modelling_data(KD_MODEL, NM_MAP, URL_MAP, LY_NAME, VISIBLE, TYPE, MAPIDX, LY_EXTEND, KDGROUP) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)",
 			GetSQLValueString($Congis,$_POST["CboAp"], "int"),
 			GetSQLValueString($Congis,$_POST["NM_PETA"], "text"),
 			GetSQLValueString($Congis,$_POST["URL_SERVICE"], "text"),
@@ -7,7 +7,8 @@
 			GetSQLValueString($Congis, $_POST["DEFAULT_SHW"], "text"),
 			GetSQLValueString($Congis,$_POST["TYPE_SERVICE"], "text"),
 			GetSQLValueString($Congis,$_POST["IDX_SERVICE"], "int"),
-			GetSQLValueString($Congis,$_POST["LY_EXTD"], "text"));
+			GetSQLValueString($Congis,$_POST["LY_EXTD"], "text"),
+			GetSQLValueString($Congis,$_POST["KDGROUP"], "int"));
 	
 	mysqli_query($Congis, $query) or die(mysqli_error());
 	$wkt = time();

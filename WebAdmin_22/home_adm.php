@@ -251,8 +251,9 @@ function EditDataSandi(){
                  <li id="AppGIs01" class="">
                     <a href="javascript:;" data-toggle="collapse" data-target="#AppGIs"><i class="fa fa-fw fa-database"></i>Web APP<i class="fa fa-fw fa-caret-down"></i></a>
                          <ul id="AppGIs" class="collapse">
-                            <li><a  href="<?php echo $nama_folder."/WebAdmin/"; ?>WebApp.jsp"><i class="fa fa-fw fa-map-marker"></i>GIS App</a></li> 
-                            <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>WebAppData.jsp"><i class="fa fa-fw fa-wrench"></i>GIS App Layers</a></li> 
+                            <li><a  href="<?php echo $nama_folder."/WebAdmin/"; ?>WebApp.jsp"><i class="fa fa-fw fa-map-marker"></i>GIS App</a></li>
+                            <li><a  href="<?php echo $nama_folder."/WebAdmin/"; ?>WebAppLayersGroup.jsp"><i class="fa fa-fw fa-folder-open"></i>Layers Group</a></li> 
+                            <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>WebAppData.jsp"><i class="fa fa-fw fa-th-list"></i>GIS App Layers</a></li> 
                             <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>GeoTagging.jsp"><i class="fa fa-fw fa-wrench"></i>GeoTagging</a></li> 
                         </ul>
                    </li>
@@ -289,8 +290,7 @@ function EditDataSandi(){
                             <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>Manajemen-kategori.jsp" ><i class="fa fa-fw fa-th-list"></i>Kategori</a></li>
                             <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>Binder.html"><i class="fa fa-fw fa-tasks"></i>Binder</a></li>
                             <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>link.html"><i class="fa fa-fw fa-link"></i>Link</a></li>
-                             <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>SosialMedia.jsp"><i class="fa fa-fw fa-instagram"></i>Sosial Media</a></li>
-                            
+                             <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>SosialMedia.jsp"><i class="fa fa-fw fa-instagram"></i>Sosial Media</a></li>                            
                            <?php /*?> <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>Manajemen-Users.jsp"><i class="fa fa-fw fa-user"></i>User Admin</a></li><?php */?>
                             <li><a href="<?php echo $nama_folder."/WebAdmin/"; ?>Backupdb.jsp" ><i class="fa fa-fw fa-database"></i>Backup DB</a></li>
                         </ul>
@@ -305,7 +305,7 @@ function EditDataSandi(){
 
              <?php 
 				switch ($segmen3) { 	
-			//=====================  UNIT KLIRING ========================	
+			//=====================  UNIT KLIRING =========
 				case "KelolaPeta.jsp" : 
 	 				include('pages/KelolaPeta.php'); 
 					break;	
@@ -329,7 +329,7 @@ function EditDataSandi(){
 				case "Layer.jsp" : 
 	 				include('pages/Layer.php'); 
 					break;	
-		//=====================  WEB MANAJEMANT ========================
+		    //=====================  WEB MANAJEMANT =============
 			case "SosialMedia.jsp" : 
 	 		    	include('pages/Manage_Sosmed.php'); 
 					break;		
@@ -459,32 +459,33 @@ function EditDataSandi(){
 			case "GeoTagging.jsp" : 
 	 		    	include('pages/WebApp_Geotagging.php'); 
 					break;
-																 
+			case "WebAppLayersGroup.jsp" : 
+	 		    	include('pages/WebApp_GroupLayers.php'); 
+					break;																 
 			default;
       			include('dasbord.php');
 			}?> 
   <!-- --------------------MESAGE --------------- -->
- <div id="PsnHapus" class="MsgHaspus">
-   <div class="panel panel-red">
-       <div class="panel-heading">
-            <h3 id="PnlTitle" class="panel-title">Hapus Data</h3>
+     <div id="PsnHapus" class="MsgHaspus">
+       <div class="panel panel-red">
+           <div class="panel-heading">
+                <h3 id="PnlTitle" class="panel-title">Hapus Data</h3>
+           </div>
+           <div class="panel-body" id="IsiPesanHapus">
+                 Panel content
+           </div>
+           <div class="panel-body" align="right">
+           <button type="button" onClick="BatalHapus()" class="btn btn-warning">Close</button>
+           <button type="button" id="CmdOkeDel" onClick="HapusData()" class="btn btn-danger">Oke</button>
+            <button type="button" id="CmdEditPwd" onClick="EditDataSandi()" class="btn btn-danger">Update Sandi</button>
+           </div>
        </div>
-       <div class="panel-body" id="IsiPesanHapus">
-             Panel content
-       </div>
-       <div class="panel-body" align="right">
-       <button type="button" onClick="BatalHapus()" class="btn btn-warning">Close</button>
-       <button type="button" id="CmdOkeDel" onClick="HapusData()" class="btn btn-danger">Oke</button>
-        <button type="button" id="CmdEditPwd" onClick="EditDataSandi()" class="btn btn-danger">Update Sandi</button>
-       </div>
-   </div>
- </div>
-<!-- --------------------END MESAGE------------ --> 
-           
+     </div>
+    <!-- --------------------END MESAGE------------ -->           
     </div>
     <!-- /#wrapper -->
 </div>
-    <!-- jQuery -->
-    <script src="<?php echo $nama_folder; ?>/Libs/js/bootstrap.min.js"></script>
+ <!-- jQuery -->
+<script src="<?php echo $nama_folder; ?>/Libs/js/bootstrap.min.js"></script>
 </body>
 </html><?php } ?>

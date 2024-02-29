@@ -28,7 +28,7 @@ $totalRows_rsSetting = mysqli_num_rows($rsSetting);
                 </div>
                 <!-- /.row -->
                <!-- ========================================================================================== -->
-               <form action="<?php echo $nama_folder; ?>/Managemant_conf.php" method="POST" enctype="multipart/form-data" name="FormSetting">
+               <form action="<?php echo $nama_folder; ?>/Updating-config" method="POST" enctype="multipart/form-data" name="FormSetting">
                <div class="col-lg-6 text-left">
                     <div class="panel panel-default">
                         <div class="panel-body">
@@ -73,7 +73,17 @@ $totalRows_rsSetting = mysqli_num_rows($rsSetting);
                					<div class="form-group">
                       				<label>Nama Organisasi</label>
                      				 <input name="NAMA_PT" class="form-control" type="text" value="<?php echo $row_rsSetting['NAMA_PT']; ?>" placeholder="Alamat Organisasi" size="50" maxlength="100" />
-               					</div>                                                                                                                              
+               					</div>
+                                <div class="form-group">
+                                  <label>WebPortal Tema</label>
+                                  <select name="CboThema" class="form-control">
+                                    <option value="default_ori" <?php if($row_rsSetting['webtema']=='default_ori'){ echo 'selected="selected"';} ; ?>>Default</option>
+                                    <option value="default_kuning" <?php if($row_rsSetting['webtema']=='default_kuning'){ echo 'selected="selected"';} ; ?>>Kuning</option>
+                                    <option value="default_hijau" <?php if($row_rsSetting['webtema']=='default_hijau'){ echo 'selected="selected"';} ; ?>>Hijau</option>
+                                    <option value="default_orange" <?php if($row_rsSetting['webtema']=='default_orange'){ echo 'selected="selected"';} ; ?>>Orange</option>
+                                    <option value="default" <?php if($row_rsSetting['webtema']=='default'){ echo 'selected="selected"';} ; ?>>Biru</option>
+                                  </select>
+                               </div>                                                                                                                              
                          </div>
                          </div>
                    </div>
@@ -153,9 +163,9 @@ $totalRows_rsSetting = mysqli_num_rows($rsSetting);
                         </div>
                     </div>               
                <!---------------------------------------------------------------------------------------------- -->
-               <div class="col-lg-12 text-right">
+               <div class="col-lg-12">
                      <div class="panel panel-default">
-                         <div class="panel-body">
+                         <div class="panel-body" align="right">
                                 <button type="submit" class="btn btn-lg btn-primary">Update Setting</button>
                          </div>
                      </div>

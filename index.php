@@ -437,6 +437,22 @@ case "Edit-WebAppData.jsp" :
 case "Hapus-WebAppData.jsp" : 
 	 include('WebAdmin_22/module/WebAppData_delete.php'); 
 	break;
+//------------Web APP DATA GROUP------------------
+case "WebAppGroup.jsp" : 
+	 include('WebAdmin_22/module/WebAppGroup_post.php'); 
+	break;
+case "Tabel-WebAppGroup.jsp" : 
+	 include('WebAdmin_22/module/WebAppGroup_tabel.php'); 
+	break;
+case "Edit-WebAppGroup.jsp" : 
+	 include('WebAdmin_22/module/WebAppGroup_edit.php'); 
+	break;
+case "Hapus-WebAppGroup.jsp" : 
+	 include('WebAdmin_22/module/WebAppGroup_delete.php'); 
+	break;
+case "CboList-WebAppGroup.jsp" : 
+	 include('WebAdmin_22/module/WebAppGroup_Cbo.php'); 
+	break;
 //------------BASEMAP LAYER------------------
 case "Basemap.jsp" : 
 	 include('WebAdmin_22/module/Basemap_post.php'); 
@@ -517,6 +533,10 @@ case "DataWypoint-Verfikasi" :
 
 case "DataWypoint-Delete" : 
 	 include('WebAdmin_22/module/WebAppGPS_delete.php'); 
+	break;
+
+case "Updating-config" : 
+	 include('WebAdmin_22/module/Managemant_conf.php'); 
 	break;
 //--------------------------
 default;
