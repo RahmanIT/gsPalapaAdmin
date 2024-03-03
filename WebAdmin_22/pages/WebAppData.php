@@ -233,7 +233,7 @@ function AddDataOGC(nama,url,layer,xmin,ymin,xmax,ymax){
                             
                             	<div class="form-group">
                       				<label>Map Index</label>
-                      				<input name="IDX_SERVICE" id="IDX_SERVICE" class="form-control" type="text" value="" placeholder="Urutan Peta"  maxlength="3" />
+                      				<input name="IDX_SERVICE" id="IDX_SERVICE" class="form-control" type="number" value="1" placeholder="Urutan Peta"  maxlength="3" />
                					</div>
                                 
                             </div>
